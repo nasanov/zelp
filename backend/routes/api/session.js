@@ -6,6 +6,18 @@ const { User } = require('../../db/models')
 
 const router = express.Router()
 
+// GET /api/session
+router.get('/', restoreUser, (req, res) => {
+	const { user } = req;
+	if (user) {
+		return res.json({
+			user: user.toSafeObject()
+		})
+	} else {
+		return res.json({})
+	}
+})
+
 // POST /api/session
 router.post('/', asyncHandler(async (req, res, next) => {
 	const { credential, password } = req.body

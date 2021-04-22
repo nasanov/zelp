@@ -8,6 +8,8 @@ const router = express.Router()
 
 // POST /api/users
 // User Sign up
+
+// ! why post('') is empty
 router.post('', asyncHandler(async (req, res) => {
 	const { email, password, username } = req.body;
 	const user = await User.signup({email, password, username})
