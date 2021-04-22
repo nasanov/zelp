@@ -1,5 +1,6 @@
 'use strict';
 const { Validator } = require('sequelize');
+const bcrypt = require('bcryptjs')
 
 module.exports = (sequelize, DataTypes) => {
   const User = sequelize.define('User', {
@@ -31,7 +32,65 @@ module.exports = (sequelize, DataTypes) => {
         len: [60, 60]
       },
     },
+	},
+	{
+		// Model Scopes - Protecting your Users' Information
+		// These scopes help protect sensitive user information that should not be exposed the current session's user or to other users.
+		defaultScope: {
+      attributes: {
+        exclude: ['hashedPassword', 'email', 'createdAt', 'updatedAt'],
+      },
+    },
+		scopes: {
+      currentUser: {
+        attributes: { exclude: ['hashedPassword'] },
+      },
+      loginUser: {
+        attributes: {},
+      },
+    },
   }, {});
+
+	// return an object with the User instance information that is safe to save to a JWT.
+	User.prototype.toSafeObject = function() { // this cannot be an arrow function
+		const { id, username, email } = this; // context will be the User instance
+		return { id, username, email };
+	};
+
+	// accept a password string and return true if there is a match with the User instance's hashedPassword
+	User.prototype.validatePassword = function (password) {
+		return bcrypt.compareSync(password, this.hashedPassword.toString());
+	 };
+
+	User.getCurrentUserById = async function (id) {
+		return await User.scope('currentUser').findByPk(id);
+	};
+
+	User.login = async function ({ credential, password }) {
+		const { Op } = require('sequelize');
+		const user = await User.scope('loginUser').findOne({
+			where: {
+				[Op.or]: {
+					username: credential,
+					email: credential,
+				},
+			},
+		});
+		if (user && user.validatePassword(password)) {
+			return await User.scope('currentUser').findByPk(user.id);
+		}
+	};
+
+	User.signup = async function ({ username, email, password }) {
+		const hashedPassword = bcrypt.hashSync(password);
+		const user = await User.create({
+			username,
+			email,
+			hashedPassword,
+		});
+		return await User.scope('currentUser').findByPk(user.id);
+	};
+	
   User.associate = function(models) {
     // associations can be defined here
   };
