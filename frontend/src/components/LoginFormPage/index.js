@@ -26,14 +26,17 @@ function LoginFormPage() {
 		<div className="loginWrap">
 			<h1>Login</h1>
 			<form onSubmit={handleSubmit}>
-				<div className="errorsContainer">
-					<span>The following errors occurred:</span>
-					<ul className="errorsList">
-						{errors.map((error, idx) => (
-							<li key={idx}>{error}</li>
-						))}
-					</ul>
-				</div>
+				{errors.length ? (
+					<div className="errorsContainer">
+						<span>The following errors occurred:</span>
+						<ul className="errorsList">
+							{errors.map((error, idx) => (
+								<li key={idx}>{error}</li>
+							))}
+						</ul>
+					</div>
+				) : <div></div>}
+
 				<label>
 					<input
 						type="text"
