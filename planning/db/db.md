@@ -47,5 +47,3 @@
 
 - `reviews.user_id` references `users.id` table
 - `reviews.business_id` references `businesses.id` table
-<!-- I can keep location in the business table >
-<!-- Also do I need separate ratings table>
