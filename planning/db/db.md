@@ -20,10 +20,12 @@
 | image_url   | STRING(255)        | NOT NULL              |
 | is_closed   | BOOLEAN            | NOT NULL              |
 | categories  | ARRAY(STRING(50))  | NOT NULL              |
-| price       | STRING(5)          | NOT NULL              |
-| phone       | STRING(50)         | NOT NULL              |
-| hours       | ARRAY(STRING(50))  | NOT NULL              |
-| photos      | ARRAY(STRING(255)) | NOT NULL              |
+| price       | STRING(5)          |                       |
+| phone       | STRING(50)         |                       |
+| hours       | ARRAY(STRING(50))  |                       |
+| photos      | ARRAY(STRING(255)) |                       |
+| about       | TEXT               |                       |
+| url         | STRING(255)        |                       |
 
 ## **`location`**
 
@@ -33,7 +35,9 @@
 | business_id | INT               | NOT NULL              |
 | address     | STRING(255)       | NOT NULL              |
 | coordinates | ARRAY(STRING(50)) | NOT NULL              |
+
 - `location.business_id` references `businesses.id` table
+
 ## **`reviews`**
 
 | column name | data type | details               |
