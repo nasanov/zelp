@@ -1,9 +1,15 @@
 .header {
 	height: 600px;
-	background-image: url('./baloons.jpg');
+	/* background-image: url('./baloons.jpg'); */
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center;
+}
+
+html,
+body {
+	height: 100%;
+	margin: 0;
 }
 
 nav {
@@ -63,7 +69,7 @@ nav ul li:hover {
 	/* position: relative;
 	margin: 0 auto; */
 }
-/* 
+
 .LogOutBTN {
 	display: block;
 	padding: 14px 20px;
@@ -79,6 +85,16 @@ nav ul li:hover {
 }
 
 .LogOutBTN:hover {
-	background-color: #034078;
+	/* background-color: #034078; */
 	cursor: pointer;
-} */
+}
+
+.profile-menu {
+	color: white;
+	position: absolute;
+	top: 200px;
+	left: 200px;
+	background-color: #0a1128;
+	padding: 5px;
+	border-radius: 5px;
+}

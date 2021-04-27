@@ -1,19 +1,24 @@
-const LOAD = 'reviews/LOAD';
-const ADD_ONE = 'reviews/ADD_ONE';
+import { csrfFetch } from './csrf';
+const LOAD = 'reviews/LOAD'
+const ADD_ONE = 'reviews/ADD_ONE'
+const load = reviews => ({
+    type:LOAD,
+    reviews
+})
+const addOneReview = review => ({
+    type: ADD_ONE,
+    review
+})
 
-
-const load = list => ({
-	type: LOAD,
-	list,
-});
-
-export const addOneReview = review => ({
-	type: ADD_ONE,
-	review,
-});
+export const getReviews = (id) => async dispatch => {
+    const res = await csrfFetch(`api/reviews/${id}`);
+    if(res.ok) {
+      const reviews = await res.json()
+        dispatch(load(reviews))
+    }
+}
 
 export const addReview = obj => async dispatch => {
-	console.log(obj);
 	const response = await fetch(`/api/reviews`, {
 		method: 'POST',
 		body: JSON.stringify(obj),

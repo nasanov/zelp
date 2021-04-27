@@ -25,15 +25,10 @@ function LoginFormPage() {
 	const demoLogin = e => {
 		e.preventDefault();
 		setErrors([]);
-		setCredential('demo-user');
-		setPassword('password');
-		// setTimeout(() => {
-		// 	return dispatch(sessionActions.login({ credential, password })).catch(async res => {
-		// 		const data = await res.json();
-		// 		if (data && data.errors) setErrors(data.errors);
-		// 	});
-		// }, 1000);
-		// document.getElementById("#submitButton").click()
+		return dispatch(sessionActions.login({ credential: 'demo-user', password: 'password' })).catch(async res => {
+			const data = await res.json();
+			if (data && data.errors) setErrors(data.errors);
+		});
 	};
 
 	return (

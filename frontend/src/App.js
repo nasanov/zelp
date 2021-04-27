@@ -6,41 +6,44 @@ import SignupFormPage from './components/SignupFormPage';
 import HomePage from './components/HomePage';
 import * as sessionActions from './store/session';
 import * as businessesActions from './store/businesses';
-import Navigation from './components/Navigation';
+// import Navigation from './components/Navigation';
 import Businesses from './components/Businesses';
+import BusinessDetails from './components/BusinessDetails';
+// import Header from './components/HomePage/Header';
 
 function App() {
 	const businesses = useSelector(state => state.business);
-	console.log('businesses', businesses);
+	const topBusinesses = useSelector(state => state.topBusinesses);
+	// console.log('businesses', businesses);
 
 	const dispatch = useDispatch();
 	const [isLoaded, setIsLoaded] = useState(false);
-
+	// console.log(isLoaded)
 	useEffect(() => {
 		dispatch(sessionActions.restoreUser()).then(() => setIsLoaded(true));
 	}, [dispatch]);
 
 	useEffect(() => {
-		dispatch(businessesActions.fetchBiz());
+		dispatch(businessesActions.fetchBusinesses());
 	}, [dispatch]);
 
-	console.log('businesses', businesses);
+	// console.log('businesses', businesses);
 	return (
 		<>
-			{/* {(window.location.pathname === "/") ? <Header/> : <Navigation isLoaded={isLoaded} />} */}
-			<Navigation isLoaded={isLoaded} />
-			<Route path="/" exact>
-				<HomePage />
-			</Route>
+			{/* <Navigation isLoaded={isLoaded} /> */}
+			{/* {window.location.pathname === '/' ? <Header /> : <Navigation isLoaded={isLoaded} />} */}
 			{isLoaded && (
 				<>
 					<Switch>
+						<Route path="/" exact>
+							<HomePage businesses={topBusinesses} />
+						</Route>
 						<Route exact path="/businesses">
 							<Businesses businesses={businesses} />
 						</Route>
-						{/* <Route exact path="/businesses/:id">
-							<BusinessesDetails businesses={businesses} />
-						</Route> */}
+						<Route exact path="/businesses/:id">
+							<BusinessDetails businesses={businesses} />
+						</Route>
 						<Route path="/login" exact>
 							<LoginFormPage />
 						</Route>
@@ -54,16 +57,6 @@ function App() {
 				</>
 			)}
 		</>
-		// <>
-		// 	<Navigation isLoaded={isLoaded} />
-		// 	{isLoaded && (
-		// 		<Switch>
-		// 			<Route path="/signup">
-		// 				<SignupFormPage />
-		// 			</Route>
-		// 		</Switch>
-		// 	)}
-		// </>
 	);
 }
 

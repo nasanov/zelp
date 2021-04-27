@@ -9,24 +9,23 @@ export const getBusinesses = businesses => {
 	};
 };
 
-export const fetchBiz = () => async dispatch => {
+
+export const fetchBusinesses = () => async dispatch => {
 	const res = await csrfFetch('/api/businesses');
 	if (!res.ok) throw res;
 	let AllBiz = {};
 	try {
 		let businesses = await res.json();
-
 		businesses.forEach(business => {
-			// console.log(business)
 			AllBiz[business.id] = business;
 		});
-		// console.log(obj)
 		dispatch(getBusinesses(AllBiz));
 		return AllBiz;
 	} catch (err) {
 		throw err;
 	}
 };
+
 
 const businessesReducer = (state = {}, action) => {
 	let newState;
