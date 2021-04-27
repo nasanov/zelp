@@ -46,6 +46,9 @@ module.exports = {
       state: {
         type: Sequelize.STRING(255)
       },
+			rating: {
+        type: Sequelize.STRING(1)
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE,

@@ -41,6 +41,9 @@ module.exports = (sequelize, DataTypes) => {
 			state: {
 				type: DataTypes.STRING(255),
 			},
+			rating: {
+				type: DataTypes.STRING(1),
+			},
 		},
 		{}
 	);
