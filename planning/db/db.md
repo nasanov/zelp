@@ -19,24 +19,15 @@
 | name        | STRING(255)        | NOT NULL              |
 | image_url   | STRING(255)        | NOT NULL              |
 | is_closed   | BOOLEAN            | NOT NULL              |
-| categories  | ARRAY(STRING(50))  | NOT NULL              |
 | price       | STRING(5)          |                       |
 | phone       | STRING(50)         |                       |
-| hours       | ARRAY(STRING(50))  |                       |
+| hours       | STRING(50)         |                       |
 | photos      | ARRAY(STRING(255)) |                       |
 | about       | TEXT               |                       |
 | url         | STRING(255)        |                       |
-
-## **`location`**
-
-| column name | data type         | details               |
-| ----------- | ----------------- | --------------------- |
-| id          | INT               | NOT NULL, PRIMARY KEY |
-| business_id | INT               | NOT NULL              |
-| address     | STRING(255)       | NOT NULL              |
-| coordinates | ARRAY(STRING(50)) | NOT NULL              |
-
-- `location.business_id` references `businesses.id` table
+| address     | STRING(255)        |                       |
+| coordinates | ARRAY(STRING(50))  |                       |
+| state       | STRING(50)         |                       |
 
 ## **`reviews`**
 
@@ -51,3 +42,20 @@
 
 - `reviews.user_id` references `users.id` table
 - `reviews.business_id` references `businesses.id` table
+
+## **`categories`**
+
+| column name | data type   | details               |
+| ----------- | ----------- | --------------------- |
+| id          | INT         | NOT NULL, PRIMARY KEY |
+| name        | STRING(255) | NOT NULL              |
+
+## **`business_category`**
+
+| column name | data type | details  |
+| ----------- | --------- | -------- |
+| business_id | INT       | NOT NULL |
+| category_id | INT       | NOT NULL |
+
+- `business_category.business_id` references `businesses.id` table
+- `business_category.category_id` references `category.id` table

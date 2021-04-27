@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="../../frontend/public/stylesheets/reset.css" />
+		<!-- <link rel="stylesheet" href="../../frontend/public/stylesheets/buttons.css" /> -->
+		<!-- <link rel="stylesheet" href="../../frontend/src/components/Navigation/Navigation.css" /> -->
+		<link rel="stylesheet" href="./index.css" />
+		<link
+			rel="stylesheet"
+			href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+			integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
+			crossorigin="anonymous"
+		/>
+		<title>temp</title>
+	</head>
+	<body>
+		<header class="header">
+			<nav>
+				<ul className="menu">
+					<li>
+						<a to="/login">Log In</a>
+					</li>
+					<li class="signup-btn">
+						<a to="/signup">Sign Up</a>
+					</li>
+				</ul>
+			</nav>
+			<section class="search">
+				<input type="text" class="search-input" placeholder="Search..." />
+			</section>
+		</header>
+
+		<main>
+			<section class="categories"></section>
+			<section class="states"></section>
+		</main>
+		<!-- <footer class="footer">
+			<a href="/" class="footer-links">Home</a>
+			<a href="https://github.com/danielshoun/good-movies" target="_blank" )>
+				<i class="fab fa-github footer-github"></i>
+			</a>
+
+			<a href="/about" class="footer-links"> About</a>
+			dropdown menu for languages
+		</footer> -->
+	</body>
+	<script src="./api.js"></script>
+</html>
