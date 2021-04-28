@@ -7,7 +7,8 @@ router.get(
 	'/',
 	asyncHandler(async function (req, res) {
 		const reviews = await Review.findAll();
-		console.log('/api/reviews/:id/');
+		console.log('Backend reviews route /api/reviews/');
+		console.log(reviews);
 		return res.json(reviews);
 	})
 );
