@@ -1,62 +1,69 @@
 import { csrfFetch } from './csrf';
 const LOAD = 'reviews/LOAD';
-// const ADD_ONE = 'reviews/ADD_ONE'
+const ADD_ONE = 'reviews/ADD_ONE';
 
 const load = reviews => ({
 	type: LOAD,
 	reviews,
 });
-// const addOneReview = review => ({
-//     type: ADD_ONE,
-//     review
-// })
+
+const addOneReview = review => ({
+	type: ADD_ONE,
+	review,
+});
 
 export const getReviews = id => async dispatch => {
 	const res = await csrfFetch(`/api/reviews/${id}`);
-	console.log(res);
+	console.log('reviews store', res);
 	if (res.ok) {
 		const reviews = await res.json();
-		console.log('--------', reviews);
+		// console.log('--------', reviews);
 		dispatch(load(reviews));
 	}
 };
 
-// export const addReview = obj => async dispatch => {
-// 	const response = await fetch(`/api/reviews`, {
-// 		method: 'POST',
-// 		body: JSON.stringify(obj),
-// 		headers: { 'Content-Type': 'application/json' },
-// 	});
+export const addReview = reviewObj => async dispatch => {
+	console.log('reviewObj', reviewObj);
+	const res = await csrfFetch(`/api/reviews`, {
+		method: 'POST',
+		body: JSON.stringify(reviewObj),
+		headers: { 'Content-Type': 'application/json' },
+	});
 
-// 	if (response.ok) {
-// 		const review = await response.json();
-// 		console.log(review);
-// 		dispatch(addOneReview(review));
-// 		return review;
-// 	}
-// };
+	if (res.ok) {
+		const review = await res.json();
+		console.log(review);
+		dispatch(addOneReview(review));
+		return review;
+	} else {
+		throw res;
+	}
+};
 
 const initialState = {
 	reviews: [],
 };
 
 const reviewsReducer = (state = initialState, action) => {
-	console.log(action);
+	// console.log(action);
 	switch (action.type) {
 		case LOAD: {
-			const allReviews = {};
+			let newState = {};
 			action.reviews.forEach(review => {
-				allReviews[review.id] = review;
+				newState[review.id] = review;
 			});
 			return {
-				...allReviews,
+				...newState,
 				...state,
 				reviews: action.reviews,
 			};
 		}
-		// case ADD_ONE: {
-		// 	//
-		// }
+		case ADD_ONE: {
+			let newState = {};
+			newState = { ...state };
+			newState[action.review.id] = action.review;
+			return newState;
+		}
 		default:
 			return state;
 	}

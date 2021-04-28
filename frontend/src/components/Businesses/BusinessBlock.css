@@ -5,10 +5,10 @@
 	border: 1px solid #ccc;
 	margin: 30px auto;
 	padding: 5px;
-	display:grid;
+	display: grid;
 	grid-template-areas:
-	'title title'
-	'poster details';
+		'title title'
+		'poster details';
 	grid-template-rows: 27px 1fr;
 	grid-template-columns: 190px 400px;
 }
@@ -24,10 +24,6 @@
 	display: flex;
 	flex-direction: column;
 	width: 150px;
-}
-
-.movie-details {
-	grid-area: details;
 }
 
 .phoneNumber {

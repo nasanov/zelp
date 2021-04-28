@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react'; // { useState }
 import { useDispatch, useSelector } from 'react-redux';
-import { Redirect, NavLink } from 'react-router-dom';
+import {  NavLink } from 'react-router-dom'; // Redirect,
 import * as sessionActions from '../../store/session';
-import logo from '../../images/logo.png'
+import logo from '../../images/logo.png';
 
 import './HomePage.css';
 
@@ -20,7 +20,9 @@ function HomePage({ businesses }) {
 		sessionLinks = (
 			<li>
 				<li>
-					<NavLink to="/" onClick={logout} className="signup-btn">Log out</NavLink>
+					<NavLink to="/" onClick={logout} className="home-signup-btn">
+						Log out
+					</NavLink>
 				</li>
 			</li>
 		);
@@ -31,19 +33,19 @@ function HomePage({ businesses }) {
 					<NavLink to="/login">Log In</NavLink>
 				</li>
 				<li>
-					<NavLink to="/signup" className="signup-btn">
+					<NavLink to="/signup" className="home-signup-btn">
 						Sign Up
 					</NavLink>
 				</li>
 			</>
 		);
 	}
-	const handleSubmit = e => {};
+	// const handleSearch = e => {}; search bar handle
 
 	return (
 		<>
 			<header className="header">
-				<nav>
+				<nav class="home-nav">
 					<ul className="menu">
 						<li>
 							<NavLink to="/businesses">All businesses</NavLink>
@@ -60,10 +62,10 @@ function HomePage({ businesses }) {
 						<input type="text" placeholder="Search..." className="search-input" />
 						<button type="submit" className="search-btn"></button>
 					</form> */}
-					<div class="search">
-							<input type="text" class="searchTerm" placeholder="What are you looking for?"/>
-							<button type="submit" class="searchButton">
-								<i class="fa fa-search"></i>
+					<div className="search">
+						<input type="text" className="searchTerm" placeholder="Search ..." />
+						<button type="submit" className="searchButton">
+							<i className="fa fa-search"></i>
 						</button>
 					</div>
 				</section>

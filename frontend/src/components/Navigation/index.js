@@ -1,18 +1,26 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import { useSelector } from 'react-redux';
-import ProfileButton from './ProfileButton';
+import { useDispatch, useSelector } from 'react-redux';
+import * as sessionActions from '../../store/session';
+// import ProfileButton from './ProfileButton';
 // import LoginFormModal from '../LoginFormModal';
 import './Navigation.css';
 
 function Navigation({ isLoaded }) {
 	const sessionUser = useSelector(state => state.session.user);
+	const dispatch = useDispatch();
+	const logout = e => {
+		e.preventDefault();
+		dispatch(sessionActions.logout());
+	};
 
 	let sessionLinks;
 	if (sessionUser) {
 		sessionLinks = (
 			<li>
-				<ProfileButton user={sessionUser} />
+					<NavLink to="/" onClick={logout} className="home-signup-btn">
+						Log out
+					</NavLink>
 			</li>
 		);
 	} else {
