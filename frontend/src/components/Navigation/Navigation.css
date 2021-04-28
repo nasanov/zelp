@@ -1,13 +1,13 @@
 nav {
 	margin: 0 0 40px 0;
 	padding: 0;
-	background-color: #0a1128;
+	background-color: rgb(241, 241, 241);
 	display: flex;
 	align-items: center;
-	justify-content: space-between;
+	justify-content: flex-end;
 }
 
-#logo {
+/* #logo {
 	display: block;
 	padding: 0 30px;
 	float: left;
@@ -24,7 +24,7 @@ nav {
 	content: '';
 	display: table;
 	clear: both;
-}
+} */
 
 nav ul {
 	padding: 0;
@@ -36,19 +36,19 @@ nav ul {
 nav ul li {
 	margin: 0px;
 	display: inline-block;
-	background-color: #0a1128;
+	background-color: rgb(241, 241, 241);
 }
 
 nav a {
 	display: block;
 	padding: 14px 20px;
-	color: #fefcfb;
+	color: #636363;
 	font-size: 17px;
 	text-decoration: none;
 }
 
 nav ul li:hover {
-	background-color: #034078;
+	/* background-color: rgb(197, 197, 197); */
 }
 
 /* .LogOutBTN {

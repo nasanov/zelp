@@ -6,5 +6,6 @@
 }
 
 .location {
-	/* position: ; */
+	position: absolute;
+	left: 50%;
 }
