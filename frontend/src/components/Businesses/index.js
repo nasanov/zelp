@@ -1,5 +1,4 @@
-import { NavLink } from 'react-router-dom';
-
+import BusinessBlock from './BusinessBlock'
 export default function Businesses({ businesses }) {
 	let arr = [];
 	for (let i in businesses) {
@@ -8,19 +7,11 @@ export default function Businesses({ businesses }) {
 	// console.log(arr);
 
 	return (
-		<div>
+		<div className="businesses_container">
 			<h1>All businesses page</h1>
-			{arr.map(biz => {
+			{arr.map(business => {
 				return (
-					<div>
-						<NavLink to={`/businesses/${biz.id}`}>{biz.name}</NavLink>
-						<img src={`${biz.image_url}`} width={'140px'} alt={`${biz.name}`}></img>
-						<p>Address: {biz.address}</p>
-						<p>Rating: {biz.rating}</p>
-						<p>Hours: {biz.hours}</p>
-						<p>Phone: {biz.phone}</p>
-						<p>Price: {biz.price}</p>
-					</div>
+						<BusinessBlock business={business} key={business.id}/>
 				);
 			})}
 		</div>

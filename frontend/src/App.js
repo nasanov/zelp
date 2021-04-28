@@ -13,18 +13,16 @@ import BusinessDetails from './components/BusinessDetails';
 
 function App() {
 	const businesses = useSelector(state => state.business);
-	const topBusinesses = useSelector(state => state.topBusinesses);
 	// console.log('businesses', businesses);
 
 	const dispatch = useDispatch();
 	const [isLoaded, setIsLoaded] = useState(false);
-	// console.log(isLoaded)
 	useEffect(() => {
 		dispatch(sessionActions.restoreUser()).then(() => setIsLoaded(true));
 	}, [dispatch]);
 
 	useEffect(() => {
-		dispatch(businessesActions.fetchBusinesses());
+		dispatch(businessesActions.getBusinesses());
 	}, [dispatch]);
 
 	// console.log('businesses', businesses);
@@ -36,7 +34,7 @@ function App() {
 				<>
 					<Switch>
 						<Route path="/" exact>
-							<HomePage businesses={topBusinesses} />
+							<HomePage/>
 						</Route>
 						<Route exact path="/businesses">
 							<Businesses businesses={businesses} />

@@ -1,0 +1,35 @@
+.container {
+	width: 50%;
+	background: #fefcfb;
+	border-radius: 5px;
+	border: 1px solid #ccc;
+	margin: 30px auto;
+	padding: 5px;
+	display:grid;
+	grid-template-areas:
+	'title title'
+	'poster details';
+	grid-template-rows: 27px 1fr;
+	grid-template-columns: 190px 400px;
+}
+
+.title {
+	grid-area: title;
+	font-size: 20px;
+	font-weight: 600;
+}
+
+.bus_img {
+	grid-area: poster;
+	display: flex;
+	flex-direction: column;
+	width: 150px;
+}
+
+.movie-details {
+	grid-area: details;
+}
+
+.phoneNumber {
+	color: rgb(0, 140, 255);
+}

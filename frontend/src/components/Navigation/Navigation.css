@@ -51,7 +51,7 @@ nav ul li:hover {
 	background-color: #034078;
 }
 
-.LogOutBTN {
+/* .LogOutBTN {
 	display: block;
 	padding: 14px 20px;
 	color: #fefcfb;
@@ -68,9 +68,9 @@ nav ul li:hover {
 .LogOutBTN:hover {
 	background-color: #034078;
 	cursor: pointer;
-}
+} */
 
-.profile-menu {
+/* .profile-menu {
 	color: white;
 	position: absolute;
 	top: 200px;
@@ -81,4 +81,4 @@ nav ul li:hover {
 }
 
 .profile-dropdown {
-}
+} */

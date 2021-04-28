@@ -7,7 +7,6 @@
 }
 
 nav {
-	margin: 0 0 40px 0;
 	padding: 0;
 	background-color: rgba(0, 0, 0, 0);
 	display: flex;
@@ -35,10 +34,6 @@ nav a {
 	text-decoration: none;
 }
 
-nav ul li:hover {
-	/* background-color: #034078; */
-}
-
 .signup-btn {
 	border: 1px solid #fff;
 	border-radius: 5px;
@@ -46,39 +41,76 @@ nav ul li:hover {
 
 .signup-btn:hover {
 	background-color: white;
+	color: rgba(0, 0, 0, 60%);
 }
-.signup-btn > a:hover {
-	color: rgba(0, 0, 0, 50%);
+
+/* form {
+	width: 60%;
+} */
+
+/* .search-btn {
+	width: 40px;
+	height: 40px;
+} */
+
+.search-logo {
+	margin-top: 70px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
 }
 
 .search {
-	height: 80%;
-	margin: 0 auto;
 	width: 60%;
+	position: relative;
+	display: flex;
+	/* height: 80%; */
+	margin: 0 auto;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 }
-.search-input {
-	/* position: relative;
-	margin: 0 auto; */
-}
-/* 
-.LogOutBTN {
-	display: block;
-	padding: 14px 20px;
-	color: #fefcfb;
-	font-size: 17px;
-	text-decoration: none;
-	border: 0;
-	background-color: #4c4e53;
+
+.searchTerm {
+	width: 100%;
+	border: 3px solid #cc0011;
+	border-right: none;
+	padding: 5px;
+	height: 20px;
+	border-radius: 5px 0 0 5px;
+	outline: none;
+	color: #cf6b80;
 }
 
-.LogOutBTN:focus {
+.searchTerm:focus {
+	color: #d85a65;
 	outline: none;
 }
 
-.LogOutBTN:hover {
-	background-color: #034078;
+.searchButton {
+	width: 70px;
+	height: 40px;
+	border: 1px solid #cc0022;
+	background: #cc002c;
+	text-align: center;
+	color: #fff;
+	border-radius: 0 5px 5px 0;
 	cursor: pointer;
-} */
+	font-size: 20px;
+	margin-left: -4px;
+}
+
+/*Resize the wrap to see the search bar change!*/
+.wrap {
+	width: 30%;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.page-logo {
+	width: 350px;
+	display: block;
+}
