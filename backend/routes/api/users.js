@@ -32,7 +32,7 @@ const  validateSignup = [
 // POST /api/users
 // User Sign up
 // ! why post('') is empty
-router.post('', validateSignup, asyncHandler(async (req, res) => {
+router.post('/', validateSignup, asyncHandler(async (req, res) => {
 	const { email, password, username } = req.body;
 	const user = await User.signup({email, password, username})
 

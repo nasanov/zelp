@@ -22,6 +22,15 @@ function LoginFormPage() {
 		});
 	};
 
+	const demoLogin = e => {
+		e.preventDefault();
+		setErrors([]);
+		return dispatch(sessionActions.login({ credential: 'demo-user', password: 'password' })).catch(async res => {
+			const data = await res.json();
+			if (data && data.errors) setErrors(data.errors);
+		});
+	};
+
 	return (
 		<div className="loginWrap">
 			<h1>Login</h1>
@@ -35,10 +44,13 @@ function LoginFormPage() {
 							))}
 						</ul>
 					</div>
-				) : <div></div>}
+				) : (
+					<div></div>
+				)}
 
 				<label>
 					<input
+						id="email"
 						type="text"
 						value={credential}
 						onChange={e => setCredential(e.target.value)}
@@ -48,6 +60,7 @@ function LoginFormPage() {
 				</label>
 				<label>
 					<input
+						id="password"
 						type="password"
 						value={password}
 						onChange={e => setPassword(e.target.value)}
@@ -57,6 +70,9 @@ function LoginFormPage() {
 				</label>
 				<button type="submit" id="submitButton" className="buttonPrimary">
 					Log In
+				</button>
+				<button id="demoButton" className="buttonPrimary" onClick={demoLogin}>
+					Demo Login
 				</button>
 			</form>
 		</div>

@@ -16,14 +16,6 @@ function Navigation({ isLoaded }) {
 			</li>
 		);
 	} else {
-		// sessionLinks = (
-		// 	<>
-		// 		<LoginFormModal />
-		// 		<li>
-		// 			<NavLink to="/signup">Sign Up</NavLink>
-		// 		</li>
-		// 	</>
-		// );
 		sessionLinks = (
 			<>
 				<li>

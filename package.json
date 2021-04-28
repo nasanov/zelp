@@ -22,5 +22,9 @@
   "bugs": {
     "url": "https://github.com/nasanov/authenticate-me/issues"
   },
-  "homepage": "https://github.com/nasanov/authenticate-me#readme"
+  "homepage": "https://github.com/nasanov/authenticate-me#readme",
+  "devDependencies": {
+    "node-fetch": "^2.6.1",
+    "yelp-fusion": "^3.0.0"
+  }
 }

@@ -19,7 +19,8 @@ module.exports = {
 					hours: '06:00 - 23:00',
 					state: 'TX',
 					address: '1700 Hermann DrHouston, TX 77004',
-					price: '$$$'
+					price: '$$$',
+					rating: '4'
 				},
 				{
 					name: 'Discovery Green',
@@ -35,7 +36,8 @@ module.exports = {
 					hours: '06:00 - 23:00',
 					state: 'TX',
 					address: '1500 McKinneyHouston, TX 77010',
-					price: '$$$'
+					price: '$$$',
+					rating: '3'
 				},
 				{
 					name: 'Houston Zoo',
@@ -51,7 +53,8 @@ module.exports = {
 					hours: '06:00 - 23:00',
 					state: 'TX',
 					address: '6200 Hermann Park DrHouston, TX 77030',
-					price: '$$$'
+					price: '$$$',
+					rating: '4'
 				},
 				{
 					name: 'Memorial Park',
@@ -67,7 +70,8 @@ module.exports = {
 					state: 'TX',
 					address: '6501 Memorial DrHouston, TX 77007',
 					hours: '06:00 - 23:00',
-					price: '$$$'
+					price: '$$$',
+					rating: '5'
 				},
 				{
 					name: 'Minute Maid Park',
@@ -83,7 +87,8 @@ module.exports = {
 					hours: '06:00 - 23:00',
 					state: 'TX',
 					address: '501 Crawford StHouston, TX 77002',
-					price: '$$$'
+					price: '$$$',
+					rating: '2'
 				},
 				{
 					name: 'Citizen Pilates',
@@ -99,7 +104,8 @@ module.exports = {
 					hours: '06:00 - 23:00',
 					state: 'TX',
 					address: '3217 Houston AveHouston, TX 77009',
-					price: '$$$'
+					price: '$$$',
+					rating: '1'
 				},
 				{
 					name: 'Buffalo Bayou Park',
@@ -115,7 +121,8 @@ module.exports = {
 					hours: '06:00 - 23:00',
 					state: 'TX',
 					address: '105 Sabine StHouston, TX 77007',
-					price: '$$$'
+					price: '$$$',
+					rating: '4'
 				},
 				{
 					name: 'The GYM',
@@ -131,7 +138,8 @@ module.exports = {
 					hours: '06:00 - 23:00',
 					state: 'TX',
 					address: '1950 W Gray StSte 6Houston, TX 77019',
-					price: '$$$'
+					price: '$$$',
+					rating: '3'
 				},
 				{
 					name: 'Escape Hunt Houston',
@@ -147,7 +155,8 @@ module.exports = {
 					hours: '06:00 - 23:00',
 					state: 'TX',
 					address: '125 W Gray StSte 100Houston, TX 77019',
-					price: '$$$'
+					price: '$$$',
+					rating: '4'
 				},
 				{
 					name: 'Citizen Pilates',
@@ -163,7 +172,8 @@ module.exports = {
 					hours: '06:00 - 23:00',
 					state: 'TX',
 					address: '940 Heights BlvdHouston, TX 77008',
-					price: '$$$'
+					price: '$$$',
+					rating: '3'
 				},
 				{
 					name: 'Strange Bird Immersive',
@@ -179,7 +189,8 @@ module.exports = {
 					hours: '06:00 - 23:00',
 					state: 'TX',
 					address: '7026 Old Katy RdSte 310Houston, TX 77024',
-					price: '$$$'
+					price: '$$$',
+					rating: '2'
 				},
 				{
 					name: 'Inner Me Studios',
@@ -195,7 +206,8 @@ module.exports = {
 					hours: '06:00 - 23:00',
 					state: 'TX',
 					address: '2206 Emancipation AveHouston, TX 77003',
-					price: '$$$'
+					price: '$$$',
+					rating: '3'
 				},
 				{
 					name: 'BIG Power Yoga',
@@ -211,7 +223,8 @@ module.exports = {
 					hours: '06:00 - 23:00',
 					state: 'TX',
 					address: 'Houston, TX 77055',
-					price: '$$$'
+					price: '$$$',
+					rating: '5'
 				},
 				{
 					name: 'Republic Aerial Yoga',
@@ -227,7 +240,8 @@ module.exports = {
 					hours: '06:00 - 23:00',
 					state: 'TX',
 					address: '1302 Houston AveSte 600Houston, TX 77007',
-					price: '$$$'
+					price: '$$$',
+					rating: '4'
 				},
 				{
 					name: 'Escape The Room Texas',
@@ -243,7 +257,8 @@ module.exports = {
 					hours: '06:00 - 23:00',
 					state: 'TX',
 					address: '3303 LouisianaSte 220Houston, TX 77006',
-					price: '$$$'
+					price: '$$$',
+					rating: '3'
 				},
 				{
 					name: 'Levy Park',
@@ -259,7 +274,8 @@ module.exports = {
 					state: 'TX',
 					address: '3801 Eastside StHouston, TX 77098',
 					hours: '06:00 - 23:00',
-					price: '$$$'
+					price: '$$$',
+					rating: '1'
 				},
 				{
 					name: 'Body Rock Pilates',
@@ -275,7 +291,8 @@ module.exports = {
 					hours: '06:00 - 23:00',
 					state: 'TX',
 					address: '3502 Oak Forest DrHouston, TX 77018',
-					price: '$$$'
+					price: '$$$',
+					rating: '3'
 				},
 				{
 					name: 'Revolution Studio',
@@ -291,7 +308,8 @@ module.exports = {
 					hours: '06:00 - 23:00',
 					state: 'TX',
 					address: '2800 Kirby DrSte A-220Houston, TX 77098',
-					price: '$$$'
+					price: '$$$',
+					rating: '3'
 				},
 				{
 					name: 'Washington Gym',
@@ -307,7 +325,8 @@ module.exports = {
 					hours: '06:00 - 23:00',
 					state: 'TX',
 					address: '1925 Washington AveHouston, TX 77007',
-					price: '$$$'
+					price: '$$$',
+					rating: '2'
 				},
 				{
 					name: 'CrossFit H-Town',
@@ -323,7 +342,8 @@ module.exports = {
 					hours: '06:00 - 23:00',
 					state: 'TX',
 					address: '1919 Silver StHouston, TX 77007',
-					price: '$$$'
+					price: '$$$',
+					rating: '2'
 				},
 				{
 					name: 'Houston Arboretum & Nature Center',
@@ -339,7 +359,8 @@ module.exports = {
 					hours: '06:00 - 23:00',
 					state: 'TX',
 					address: '4501 Woodway DrHouston, TX 77024',
-					price: '$$$'
+					price: '$$$',
+					rating: '2'
 				},
 				{
 					name: 'McGovern Centennial Gardens',
@@ -355,7 +376,8 @@ module.exports = {
 					hours: '06:00 - 23:00',
 					state: 'TX',
 					address: '1700 Hermann DrHouston, TX 77030',
-					price: '$$$'
+					price: '$$$',
+					rating: '5'
 				},
 				{
 					name: 'RYDE',
@@ -371,7 +393,8 @@ module.exports = {
 					hours: '06:00 - 23:00',
 					state: 'TX',
 					address: '2005 West GraySte DHouston, TX 77019',
-					price: '$$$'
+					price: '$$$',
+					rating: '5'
 				},
 				{
 					name: 'Project Panic - Houston',
@@ -387,7 +410,8 @@ module.exports = {
 					hours: '06:00 - 23:00',
 					state: 'TX',
 					address: '3510 Main StSte CHouston, TX 77002',
-					price: '$$$'
+					price: '$$$',
+					rating: '5'
 				},
 				{
 					name: 'Smither Park',
@@ -403,7 +427,8 @@ module.exports = {
 					state: 'TX',
 					address: '2402 MungerHouston, TX 77023',
 					hours: '06:00 - 23:00',
-					price: '$$$'
+					price: '$$$',
+					rating: '4'
 				},
 				{
 					name: 'RIDE Indoor Cycling',
@@ -419,7 +444,8 @@ module.exports = {
 					state: 'TX',
 					address: '548B W 19th StHouston, TX 77008',
 					hours: '06:00 - 23:00',
-					price: '$$$'
+					price: '$$$',
+					rating: '4'
 				},
 				{
 					name: 'BON Running Club',
@@ -435,7 +461,8 @@ module.exports = {
 					state: 'TX',
 					address: '5555 Morningside DrHouston, TX 77005',
 					hours: '06:00 - 23:00',
-					price: '$$$'
+					price: '$$$',
+					rating: '4'
 				},
 				{
 					name: 'Buffalo Bayou Park Cistern',
@@ -451,7 +478,8 @@ module.exports = {
 					hours: '06:00 - 23:00',
 					state: 'TX',
 					address: '105 Sabine StHouston, TX 77007',
-					price: '$$$'
+					price: '$$$',
+					rating: '3'
 				},
 				{
 					name: 'Tellepsen Family Downtown YMCA',
@@ -467,7 +495,8 @@ module.exports = {
 					hours: '06:00 - 23:00',
 					state: 'TX',
 					address: '808 PeaseHouston, TX 77002',
-					price: '$$$'
+					price: '$$$',
+					rating: '3'
 				},
 				{
 					name: 'The Bar Method',
@@ -483,7 +512,8 @@ module.exports = {
 					hours: '06:00 - 23:00',
 					state: 'TX',
 					address: '503 Westheimer RdHouston, TX 77006',
-					price: '$$$'
+					price: '$$$',
+					rating: '3'
 				},
 				{
 					name: 'Yogaleena Studio',
@@ -499,7 +529,8 @@ module.exports = {
 					hours: '06:00 - 23:00',
 					state: 'TX',
 					address: '2621 S ShepherdSte 230Houston, TX 77098',
-					price: '$$$'
+					price: '$$$',
+					rating: '2'
 				},
 				{
 					name: 'Hermann Park Trail',
@@ -515,7 +546,8 @@ module.exports = {
 					state: 'TX',
 					address: '2145-2155 N Macgregor WayHouston, TX 77004',
 					hours: '06:00 - 23:00',
-					price: '$$$'
+					price: '$$$',
+					rating: '2'
 				},
 				{
 					name: 'Facet Seven Heights',
@@ -531,7 +563,8 @@ module.exports = {
 					hours: '06:00 - 23:00',
 					state: 'TX',
 					address: '2215 Lawrence StHouston, TX 77008',
-					price: '$$$'
+					price: '$$$',
+					rating: '2'
 				},
 				{
 					name: 'Black Swan Yoga Houston',
@@ -547,7 +580,8 @@ module.exports = {
 					hours: '06:00 - 23:00',
 					state: 'TX',
 					address: '3210 White Oak DrHouston, TX 77007',
-					price: '$$$'
+					price: '$$$',
+					rating: '3'
 				},
 				{
 					name: 'Downtown Aquarium',
@@ -561,6 +595,7 @@ module.exports = {
 						'https://s3-media1.fl.yelpcdn.com/bphoto/gm2tKg8RwWbXTuyhTy0cSA/o.jpg'
 					],
 					price: '$$$',
+					rating: '3',
 					hours: '06:00 - 23:00',
 					state: 'TX',
 					address: '410 Bagby StHouston, TX 77002'
@@ -579,7 +614,8 @@ module.exports = {
 					hours: '06:00 - 23:00',
 					state: 'TX',
 					address: '524 Waugh DrHouston, TX 77019',
-					price: '$$$'
+					price: '$$$',
+					rating: '3'
 				},
 				{
 					name: 'Hip Fitness',
@@ -595,7 +631,8 @@ module.exports = {
 					hours: '06:00 - 23:00',
 					state: 'TX',
 					address: '2294 W Holcombe BlvdHouston, TX 77005',
-					price: '$$$'
+					price: '$$$',
+					rating: '4'
 				},
 				{
 					name: 'Fletcher Bike Studio',
@@ -609,6 +646,7 @@ module.exports = {
 						'https://s3-media2.fl.yelpcdn.com/bphoto/gMise8oRaHrxSz5ol1YSzg/o.jpg'
 					],
 					price: '$$$',
+					rating: '4',
 					hours: '06:00 - 23:00',
 					state: 'TX',
 					address: '2404 Taft StHouston, TX 77006'
@@ -627,7 +665,8 @@ module.exports = {
 					hours: '06:00 - 23:00',
 					state: 'TX',
 					address: '4828 1/2 Loop Central DrHouston, TX 77081',
-					price: '$$$'
+					price: '$$$',
+					rating: '4'
 				},
 				{
 					name: 'Market Square Park',
@@ -643,7 +682,8 @@ module.exports = {
 					hours: '06:00 - 23:00',
 					state: 'TX',
 					address: '301 Milam StHouston, TX 77002',
-					price: '$$$'
+					price: '$$$',
+					rating: '5'
 				},
 				{
 					name: 'Boost Pilates The Heights',
@@ -659,7 +699,8 @@ module.exports = {
 					hours: '06:00 - 23:00',
 					state: 'TX',
 					address: '3620 Katy FwySte AHouston, TX 77007',
-					price: '$$$'
+					price: '$$$',
+					rating: '5'
 				},
 				{
 					name: 'Boost Pilates River Oaks',
@@ -675,7 +716,8 @@ module.exports = {
 					hours: '06:00 - 23:00',
 					state: 'TX',
 					address: '3339 W Lamar StSte 100BHouston, TX 77019',
-					price: '$$$'
+					price: '$$$',
+					rating: '5'
 				},
 				{
 					name: 'Baby Bull Boxing',
@@ -691,7 +733,8 @@ module.exports = {
 					hours: '06:00 - 23:00',
 					state: 'TX',
 					address: '4701 Rose StHouston, TX 77007',
-					price: '$$$'
+					price: '$$$',
+					rating: '2'
 				},
 				{
 					name: 'DEFINE body & mind',
@@ -707,7 +750,8 @@ module.exports = {
 					hours: '06:00 - 23:00',
 					state: 'TX',
 					address: '2515 MorseHouston, TX 77019',
-					price: '$$$'
+					price: '$$$',
+					rating: '2'
 				},
 				{
 					name: 'Hermann Park Garden Center',
@@ -723,7 +767,8 @@ module.exports = {
 					state: 'TX',
 					address: '1500 Hermann DrHouston, TX 77004',
 					hours: '06:00 - 23:00',
-					price: '$$$'
+					price: '$$$',
+					rating: '2'
 				},
 				{
 					name: 'Heritage Muay Thai',
@@ -739,7 +784,8 @@ module.exports = {
 					hours: '06:00 - 23:00',
 					state: 'TX',
 					address: '1604 W 34th StHouston, TX 77018',
-					price: '$$$'
+					price: '$$$',
+					rating: '4'
 				},
 				{
 					name: 'Donovan Park',
@@ -755,7 +801,8 @@ module.exports = {
 					state: 'TX',
 					address: '700 Heights BlvdHouston, TX 77007',
 					hours: '06:00 - 23:00',
-					price: '$$$'
+					price: '$$$',
+					rating: '4'
 				},
 				{
 					name: 'OAK Fitness',
@@ -771,7 +818,8 @@ module.exports = {
 					hours: '06:00 - 23:00',
 					state: 'TX',
 					address: '4620 Center StHouston, TX 77007',
-					price: '$$$'
+					price: '$$$',
+					rating: '4'
 				},
 				{
 					name: 'Love Dance HTX',
@@ -787,7 +835,8 @@ module.exports = {
 					hours: '06:00 - 23:00',
 					state: 'TX',
 					address: '2206 Edwards StSte BHouston, TX 77007',
-					price: '$$$'
+					price: '$$$',
+					rating: '5'
 				},
 				{
 					name: 'The Dance Whisperer',
@@ -803,7 +852,8 @@ module.exports = {
 					hours: '06:00 - 23:00',
 					state: 'TX',
 					address: '4710 Merwin StHouston, TX 77027',
-					price: '$$$'
+					price: '$$$',
+					rating: '5'
 				}
 			],
 			{}

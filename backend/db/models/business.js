@@ -41,11 +41,14 @@ module.exports = (sequelize, DataTypes) => {
 			state: {
 				type: DataTypes.STRING(255),
 			},
+			rating: {
+				type: DataTypes.STRING(1),
+			},
 		},
 		{}
 	);
 	Business.associate = function (models) {
-		Movie.hasMany(models.Review, { foreignKey: 'business_id' });
+		Business.hasMany(models.Review, { foreignKey: 'business_id' });
 		const columnMapping = {
 			through: 'BusinessCategory', // This is the model name referencing the
 			//  join table.

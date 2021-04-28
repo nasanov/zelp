@@ -1,0 +1,4 @@
+.businesses_container {
+	display: grid;
+	grid-column: 1fr;
+}
