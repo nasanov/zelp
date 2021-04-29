@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import {  NavLink } from 'react-router-dom'; // Redirect,
 import * as sessionActions from '../../store/session';
 import logo from '../../images/logo.png';
+import Content from './Content'
 
 import './HomePage.css';
 
@@ -18,13 +19,11 @@ function HomePage({ businesses }) {
 	let sessionLinks;
 	if (sessionUser) {
 		sessionLinks = (
-			<li>
 				<li>
 					<NavLink to="/" onClick={logout} className="home-signup-btn">
 						Log out
 					</NavLink>
 				</li>
-			</li>
 		);
 	} else {
 		sessionLinks = (
@@ -45,7 +44,7 @@ function HomePage({ businesses }) {
 	return (
 		<>
 			<header className="header">
-				<nav class="home-nav">
+				<nav className="home-nav">
 					<ul className="menu">
 						<li>
 							<NavLink to="/businesses">All businesses</NavLink>
@@ -72,6 +71,7 @@ function HomePage({ businesses }) {
 			</header>
 			<div>
 				<h1>Zelp in Houston</h1>
+				<Content />
 			</div>
 		</>
 	);

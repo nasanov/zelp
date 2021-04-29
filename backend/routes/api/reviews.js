@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const asyncHandler = require('express-async-handler');
-const { Review } = require('../../db/models');
+const { Review, User } = require('../../db/models');
 
 router.get(
 	'/',
@@ -21,7 +21,8 @@ router.get(
 			where: {
 				business_id: id,
 			},
-			order: [['createdAt', 'DESC']],
+			include: [User],
+			// order: [['createdAt', 'DESC']],
 		});
 		return res.json(reviews);
 	})
@@ -32,12 +33,7 @@ router.post(
 	asyncHandler(async (req, res) => {
 		// add review for a business
 		const { review_text, rating, user_id, business_id, createdAt } = req.body;
-		console.log(
-			review_text,
-			rating,
-			business_id,
-			user_id
-		)
+		console.log(review_text, rating, business_id, user_id);
 		try {
 			const newReview = await Review.create({
 				review_text,
@@ -56,15 +52,28 @@ router.post(
 router.patch(
 	'/:id',
 	asyncHandler(async (req, res) => {
-		// edit review for a business
-	})
-);
+    const { id, review_text, rating } = req.body
+    await Review.update({review_text, rating,},{
+			where: {
+        id
+			}
+		})
 
-router.delete(
-	'/:id',
-	asyncHandler(async (req, res) => {
-		// delete review for a business
+    try {
+        const newRev = await Review.findByPk(id)
+        res.json(newRev)
+    } catch(err) {
+			console.error(err)
+    }
 	})
-);
+	);
 
-module.exports = router;
+	router.delete(
+		'/',
+		asyncHandler(async (req, res) => {
+			const { id } = req.body;
+			await Review.destroy({ where: { id } });
+			res.json({ id });
+		})
+	);
+	module.exports = router;

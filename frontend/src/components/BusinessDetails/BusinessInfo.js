@@ -1,9 +1,9 @@
+import GoogleApiWrapper from '../GoogleMap/index';
 import rating_1 from '../../images/small_1@2x.png';
 import rating_2 from '../../images/small_2@2x.png';
 import rating_3 from '../../images/small_3@2x.png';
 import rating_4 from '../../images/small_4@2x.png';
 import rating_5 from '../../images/small_5@2x.png';
-import GoogleApiWrapper from '../GoogleMap/index';
 
 export default function BusinessInfo({ business }) {
 	const rating = [rating_1, rating_2, rating_3, rating_4, rating_5];

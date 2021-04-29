@@ -9,10 +9,12 @@ import BusinessInfo from './BusinessInfo'
 import BusinessReviews from './BusinessReviews';
 
 export default function BusinessDetails() {
+
 	let { id } = useParams();
 	const business = useSelector(state => state.business[id]);
-	const reviews = useSelector(state => state.reviews);
+	// const reviews = useSelector(state => state.reviews);
 
+	// console.log('***** REVIEWS *****', reviews);
 	const dispatch = useDispatch();
 
 	useEffect(() => {
@@ -20,12 +22,11 @@ export default function BusinessDetails() {
 		// dispatch(getOneBusiness(id));
 	}, [dispatch, id]);
 
-	console.log('***** REVIEWS *****', reviews.reviews);
 
 	return (
 		<div className="main_container">
 			<BusinessInfo business={business}/>
-			<BusinessReviews reviews={reviews.reviews} business_id={id}/>
+			<BusinessReviews business_id={id}/>
 		</div>
 	);
 }

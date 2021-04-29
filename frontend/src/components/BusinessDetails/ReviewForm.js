@@ -12,16 +12,16 @@ function ReviewForm({ business_id }) {
 
 	const handleSubmit = e => {
 		e.preventDefault();
-		const newData = {
+		const payload = {
 			review_text,
 			rating,
 			user_id: user.id,
 			business_id: parseInt(business_id),
-			createdAt: new Date()
+			createdAt: new Date(),
 		};
-		dispatch(addReview(newData));
-		setReviewText('');
-		setRating(0);
+		dispatch(addReview(payload));
+		// setReviewText('');
+		// setRating(0);
 	};
 
 	return (
@@ -33,12 +33,12 @@ function ReviewForm({ business_id }) {
 				<option value="4">4</option>
 				<option value="5">5</option>
 			</select>
-			<input
+			<textarea
 				placeholder="Add review"
 				type="text"
 				value={review_text}
 				onChange={e => setReviewText(e.target.value)}
-			></input>
+			></textarea>
 			<button>Add review</button>
 		</form>
 	);
