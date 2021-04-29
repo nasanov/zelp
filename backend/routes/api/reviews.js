@@ -21,7 +21,7 @@ router.get(
 			where: {
 				business_id: id,
 			},
-			include: [User]
+			include: [User],
 			// order: [['createdAt', 'DESC']],
 		});
 		return res.json(reviews);
@@ -52,15 +52,28 @@ router.post(
 router.patch(
 	'/:id',
 	asyncHandler(async (req, res) => {
-		// edit review for a business
-	})
-);
+    const { id, review_text, rating } = req.body
+    await Review.update({review_text, rating,},{
+			where: {
+        id
+			}
+		})
 
-router.delete(
-	'/:id',
-	asyncHandler(async (req, res) => {
-		// delete review for a business
+    try {
+        const newRev = await Review.findByPk(id)
+        res.json(newRev)
+    } catch(err) {
+			console.error(err)
+    }
 	})
-);
+	);
 
-module.exports = router;
+	router.delete(
+		'/',
+		asyncHandler(async (req, res) => {
+			const { id } = req.body;
+			await Review.destroy({ where: { id } });
+			res.json({ id });
+		})
+	);
+	module.exports = router;

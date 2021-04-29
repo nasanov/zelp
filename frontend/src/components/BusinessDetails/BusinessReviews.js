@@ -1,17 +1,26 @@
 import ReviewForm from './ReviewForm';
-// import { useState, useEffect } from 'react'
-import { useSelector } from 'react-redux';
+import EditForm from './EditForm'
+import { useState } from 'react'
+import { useSelector, useDispatch } from 'react-redux';
+import { deleteReview } from '../../store/reviews';
 // import * as sessionActions from '../../store/session';
 
+
 export default function BusinessReviews({ business_id }) {
-	// console.log("busid", business_id)
-	const sessionUser = useSelector(state => state.session.user); // will use it later for add review form
+	const dispatch = useDispatch();
+
+	const sessionUser = useSelector(state => state.session.user);
 	const reviews = Object.values(useSelector(state => state.reviews));
-	// console.log('reviews', new Date(reviews[0]?.createdAt).toDateString());
 	let sortedReviews = reviews.sort((a, b) => b.id - a.id);
-	// .toDateString() + ' ' + review.createdAt.toLocaleTimeString()
-	const editReview = () => {};
-	const deleteReview = () => {};
+
+	const [showForm, setShowForm] = useState(false)
+
+
+	const deleteHandler = (e, id) => {
+		console.log(id);
+		e.preventDefault();
+		dispatch(deleteReview(id));
+	};
 
 	let isReviewed = false;
 	for (const review of sortedReviews) {
@@ -19,7 +28,6 @@ export default function BusinessReviews({ business_id }) {
 			isReviewed = true;
 		}
 	}
-	console.log('isReviewd', reviews);
 
 	return (
 		<>
@@ -27,18 +35,22 @@ export default function BusinessReviews({ business_id }) {
 			<div className="reviews-container">
 				{sortedReviews.map(review => {
 					// review.createdAt = new Date(review.createdAt)
-					let reviewDate = new Date(review?.createdAt).toDateString() + ' ' + new Date(review?.createdAt).toLocaleTimeString()
+					let reviewDate =
+						new Date(review?.createdAt).toDateString() + ' ' + new Date(review?.createdAt).toLocaleTimeString();
+						// onClick={/* show form */}
 					return (
 						<div key={review.id}>
 							{review.user_id === sessionUser.id ? (
 								<div>
-									<button onClick={editReview}>Edit</button> <button onClick={deleteReview}>Delete</button>
+									<button onClick={() => setShowForm(!showForm)}>Edit</button>
+									{ showForm ? <EditForm review={review} setShowForm={setShowForm}/> : null }
+									<button onClick={e => deleteHandler(e, review.id)}>Delete</button>
 								</div>
 							) : null}
 							<div>Rating: {review.rating}</div>
 							<div>Review text: {review.review_text}</div>
 							<div>Created: {reviewDate}</div>
-							<div>Username: {review.User.username}</div>
+							<div>Username: {review.User?.username}</div>
 						</div>
 					);
 				})}

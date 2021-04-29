@@ -12,16 +12,16 @@ function ReviewForm({ business_id }) {
 
 	const handleSubmit = e => {
 		e.preventDefault();
-		const newData = {
+		const payload = {
 			review_text,
 			rating,
 			user_id: user.id,
 			business_id: parseInt(business_id),
-			createdAt: new Date()
+			createdAt: new Date(),
 		};
-		dispatch(addReview(newData));
-		setReviewText('');
-		setRating(0);
+		dispatch(addReview(payload));
+		// setReviewText('');
+		// setRating(0);
 	};
 
 	return (
