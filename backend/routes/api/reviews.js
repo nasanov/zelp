@@ -21,7 +21,7 @@ router.get(
 			where: {
 				business_id: id,
 			},
-			order: [['createdAt', 'DESC']],
+			// order: [['createdAt', 'DESC']],
 		});
 		return res.json(reviews);
 	})
@@ -32,12 +32,7 @@ router.post(
 	asyncHandler(async (req, res) => {
 		// add review for a business
 		const { review_text, rating, user_id, business_id, createdAt } = req.body;
-		console.log(
-			review_text,
-			rating,
-			business_id,
-			user_id
-		)
+		console.log(review_text, rating, business_id, user_id);
 		try {
 			const newReview = await Review.create({
 				review_text,

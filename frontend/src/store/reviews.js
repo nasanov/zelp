@@ -40,27 +40,18 @@ export const addReview = reviewObj => async dispatch => {
 	}
 };
 
-const initialState = {
-	reviews: [],
-};
-
-const reviewsReducer = (state = initialState, action) => {
+const reviewsReducer = (state = {}, action) => {
 	// console.log(action);
 	switch (action.type) {
 		case LOAD: {
-			let newState = {};
+			let newState = { ...state };
 			action.reviews.forEach(review => {
 				newState[review.id] = review;
 			});
-			return {
-				...newState,
-				...state,
-				reviews: action.reviews,
-			};
+			return newState;
 		}
 		case ADD_ONE: {
-			let newState = {};
-			newState = { ...state };
+			let newState = { ...state };
 			newState[action.review.id] = action.review;
 			return newState;
 		}

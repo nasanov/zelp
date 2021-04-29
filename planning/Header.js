@@ -12,7 +12,7 @@ function Header() {
 	const handleSubmit = e => {};
 
 	return (
-		<header class="header">
+		<header className="header">
 			{/* <nav>
 				<ul className="menu">
 					<li>
@@ -21,12 +21,12 @@ function Header() {
 					<li>
 						<NavLink to="/login">Log In</NavLink>
 					</li>
-					<li class="signup-btn">
+					<li className="signup-btn">
 						<NavLink to="/signup">Sign Up</NavLink>
 					</li>
 				</ul>
 			</nav>
-			<section class="search">
+			<section className="search">
 				<img className="page-logo" src='./logo.png' alt=""/>
 				<form className="search-bar" onSubmit={handleSubmit}>
 					<input

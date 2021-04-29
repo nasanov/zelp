@@ -18,13 +18,11 @@ function HomePage({ businesses }) {
 	let sessionLinks;
 	if (sessionUser) {
 		sessionLinks = (
-			<li>
 				<li>
 					<NavLink to="/" onClick={logout} className="home-signup-btn">
 						Log out
 					</NavLink>
 				</li>
-			</li>
 		);
 	} else {
 		sessionLinks = (
@@ -45,7 +43,7 @@ function HomePage({ businesses }) {
 	return (
 		<>
 			<header className="header">
-				<nav class="home-nav">
+				<nav className="home-nav">
 					<ul className="menu">
 						<li>
 							<NavLink to="/businesses">All businesses</NavLink>
