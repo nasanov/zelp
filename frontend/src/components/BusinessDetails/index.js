@@ -9,11 +9,12 @@ import BusinessInfo from './BusinessInfo'
 import BusinessReviews from './BusinessReviews';
 
 export default function BusinessDetails() {
+
 	let { id } = useParams();
 	const business = useSelector(state => state.business[id]);
-	const reviews = useSelector(state => state.reviews.reviews);
+	// const reviews = useSelector(state => state.reviews);
 
-	console.log('***** REVIEWS *****', reviews);
+	// console.log('***** REVIEWS *****', reviews);
 	const dispatch = useDispatch();
 
 	useEffect(() => {

@@ -33,12 +33,12 @@ function ReviewForm({ business_id }) {
 				<option value="4">4</option>
 				<option value="5">5</option>
 			</select>
-			<input
+			<textarea
 				placeholder="Add review"
 				type="text"
 				value={review_text}
 				onChange={e => setReviewText(e.target.value)}
-			></input>
+			></textarea>
 			<button>Add review</button>
 		</form>
 	);

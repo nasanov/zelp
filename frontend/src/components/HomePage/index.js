@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import {  NavLink } from 'react-router-dom'; // Redirect,
 import * as sessionActions from '../../store/session';
 import logo from '../../images/logo.png';
+import Content from './Content'
 
 import './HomePage.css';
 
@@ -70,6 +71,7 @@ function HomePage({ businesses }) {
 			</header>
 			<div>
 				<h1>Zelp in Houston</h1>
+				<Content />
 			</div>
 		</>
 	);

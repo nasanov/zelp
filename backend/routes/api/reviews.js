@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const asyncHandler = require('express-async-handler');
-const { Review } = require('../../db/models');
+const { Review, User } = require('../../db/models');
 
 router.get(
 	'/',
@@ -21,6 +21,7 @@ router.get(
 			where: {
 				business_id: id,
 			},
+			include: [User]
 			// order: [['createdAt', 'DESC']],
 		});
 		return res.json(reviews);
