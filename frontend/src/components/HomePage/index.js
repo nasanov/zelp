@@ -3,9 +3,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { NavLink, useHistory } from 'react-router-dom'; // Redirect,
 import * as sessionActions from '../../store/session';
 import logo from '../../images/logo.png';
-import Content from './Content';
 import Categories from  './Categories'
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { getSearchResults } from '../../store/businesses';
 import './HomePage.css';
 

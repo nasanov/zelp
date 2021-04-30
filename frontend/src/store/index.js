@@ -3,11 +3,13 @@ import thunk from 'redux-thunk';
 import sessionReducer from './session'
 import businessesReducer from './businesses'
 import reviewsReducer from './reviews'
+import categoriesReducer from './categories'
 
 const rootReducer = combineReducers({
 	session: sessionReducer,
 	business: businessesReducer,
 	reviews: reviewsReducer,
+	categories: categoriesReducer
 })
 
 // enhancer vaiable will be set to different store enhancers depending on if the Node environment is in development or production
