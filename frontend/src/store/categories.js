@@ -1,29 +1,36 @@
 import { csrfFetch } from './csrf';
+
 const LOAD = 'categories/LOAD';
+
 const load = categories => ({
 	type: LOAD,
 	categories,
 });
 
-
 export const getCategories = () => async dispatch => {
 	const res = await csrfFetch(`/api/categories`);
+	console.log('getcaategories', res);
 	if (res.ok) {
 		const categories = await res.json();
 		dispatch(load(categories));
+	} else {
+		throw res;
 	}
 };
 
-const categoryReducer = (state = {}, action) => {
+const categoriesReducer = (state = {}, action) => {
 	// console.log(action);
 	switch (action.type) {
 		case LOAD: {
 			let newState = { ...state };
-			action.reviews.forEach(review => {
-				newState[review.id] = review;
+			action.categories.forEach(category => {
+				newState[category.id] = category;
 			});
 			return newState;
 		}
+		default:
+			return state;
+	}
 };
 
-export default categoryReducer;
+export default categoriesReducer;

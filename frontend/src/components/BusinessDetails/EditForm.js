@@ -4,7 +4,7 @@ import { useDispatch} from 'react-redux';
 
 export default function EditForm({review, setShowForm}) {
 	const {id } = review
-
+	// console.log()
 	const [review_text, setReviewText] = useState(review.review_text)
 	const [rating, setRating] = useState(review.rating)
 	const dispatch = useDispatch();

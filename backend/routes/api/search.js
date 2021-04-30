@@ -8,14 +8,12 @@ const Sequelize = require('sequelize');
 router.get(
 	'/',
 	asyncHandler(async (req, res) => {
-		console.log('sdfgsdfgsdfg');
 		let searchQuery = {
 			limit: 20,
 			order: [['id', 'DESC']],
 		};
 
 		if (req.query.name) {
-			console.log('Search ------------------------------', req.query.name);
 			searchQuery.where = { name: { [Sequelize.Op.iLike]: `%${req.query.name}%` } };
 		}
 		try {

@@ -10,14 +10,16 @@ import Navigation from './components/Navigation';
 import Businesses from './components/Businesses';
 import BusinessDetails from './components/BusinessDetails';
 import SearchResult from './components/SearchResult';
+import Category from './components/Category';
+import Footer from './components/Footer';
 // import Header from './components/HomePage/Header';
 
 function App() {
 	const businesses = useSelector(state => state.business);
 	// console.log('businesses', businesses);
 	let location = useLocation();
-
 	const dispatch = useDispatch();
+
 	const [isLoaded, setIsLoaded] = useState(false);
 	useEffect(() => {
 		dispatch(sessionActions.restoreUser()).then(() => setIsLoaded(true));
@@ -26,6 +28,10 @@ function App() {
 	useEffect(() => {
 		dispatch(businessesActions.getBusinesses());
 	}, [dispatch]);
+
+	// useEffect(() => {
+	// 	dispatch(getCategories());
+	// }, [dispatch]);
 
 	// useEffect(() => {
 	// 	dispatch(businessesActions.getSearchResults());
@@ -52,6 +58,9 @@ function App() {
 						<Route path="/signup" exact>
 							<SignupFormPage />
 						</Route>
+						<Route exact path="/categories/:id">
+							<Category />
+						</Route>
 						<Route path="/search">
 							<SearchResult />
 						</Route>
@@ -61,6 +70,7 @@ function App() {
 					</Switch>
 				</>
 			)}
+			<Footer />
 		</>
 	);
 }

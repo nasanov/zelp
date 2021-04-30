@@ -28,7 +28,6 @@ router.get(
 			}
 		} else {
 			let result = await Business.findAll();
-			console.log(result)
 			res.json(result);
 		}
 	})
