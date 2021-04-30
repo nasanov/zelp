@@ -1,29 +1,40 @@
 import React from 'react'; // { useState }
 import { useDispatch, useSelector } from 'react-redux';
-import {  NavLink } from 'react-router-dom'; // Redirect,
+import { NavLink, useHistory } from 'react-router-dom'; // Redirect,
 import * as sessionActions from '../../store/session';
 import logo from '../../images/logo.png';
-import Content from './Content'
-
+import Content from './Content';
+import Categories from  './Categories'
+import { useEffect, useState } from 'react';
+import { getSearchResults } from '../../store/businesses';
 import './HomePage.css';
 
 function HomePage({ businesses }) {
 	const dispatch = useDispatch();
+	const history = useHistory();
 	const sessionUser = useSelector(state => state.session.user);
+	const [searchText, setSearchText] = useState('');
 
 	const logout = e => {
 		e.preventDefault();
 		dispatch(sessionActions.logout());
 	};
 
+	const handleSearch = e => {
+		e.preventDefault();
+		// console.log(e.target.elements[0].value);
+		dispatch(getSearchResults(e.target.elements[0].value));
+		history.push('/search');
+	};
+
 	let sessionLinks;
 	if (sessionUser) {
 		sessionLinks = (
-				<li>
-					<NavLink to="/" onClick={logout} className="home-signup-btn">
-						Log out
-					</NavLink>
-				</li>
+			<li>
+				<NavLink to="/" onClick={logout} className="home-signup-btn">
+					Log out
+				</NavLink>
+			</li>
 		);
 	} else {
 		sessionLinks = (
@@ -39,7 +50,6 @@ function HomePage({ businesses }) {
 			</>
 		);
 	}
-	// const handleSearch = e => {}; search bar handle
 
 	return (
 		<>
@@ -57,22 +67,26 @@ function HomePage({ businesses }) {
 						<img src={logo} className="page-logo" alt="" />
 					</NavLink>
 
-					{/* <form className="search-bar" onSubmit={handleSubmit}>
-						<input type="text" placeholder="Search..." className="search-input" />
-						<button type="submit" className="search-btn"></button>
-					</form> */}
-					<div className="search">
-						<input type="text" className="searchTerm" placeholder="Search ..." />
+					<form className="search" onSubmit={handleSearch}>
+						<input
+							type="text"
+							placeholder="Search..."
+							className="searchTerm"
+							value={searchText}
+							onChange={e => setSearchText(e.target.value)}
+						/>
 						<button type="submit" className="searchButton">
 							<i className="fa fa-search"></i>
 						</button>
-					</div>
+					</form>
 				</section>
 			</header>
 			<div>
 				<h1>Zelp in Houston</h1>
-				<Content />
+				{/* <Content /> */}
+				<Categories />
 			</div>
+			{/* <Footer /> */}
 		</>
 	);
 }
