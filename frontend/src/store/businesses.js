@@ -17,14 +17,15 @@ export const loadBusinesses = businesses => {
 
 export const getBusinesses = () => async dispatch => {
 	const res = await csrfFetch('/api/businesses');
+	// console.log('hello');
 	if (!res.ok) throw res;
 	let AllBiz = {};
-		let businesses = await res.json();
-		businesses.forEach(business => {
-			AllBiz[business.id] = business;
-		});
-		dispatch(loadBusinesses(AllBiz));
-		return AllBiz;
+	let businesses = await res.json();
+	businesses.forEach(business => {
+		AllBiz[business.id] = business;
+	});
+	dispatch(loadBusinesses(AllBiz));
+	return AllBiz;
 };
 
 // export const getOneBusiness = id => async dispatch => {
