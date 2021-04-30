@@ -7,7 +7,7 @@ import reviewsReducer from './reviews'
 const rootReducer = combineReducers({
 	session: sessionReducer,
 	business: businessesReducer,
-	reviews: reviewsReducer
+	reviews: reviewsReducer,
 })
 
 // enhancer vaiable will be set to different store enhancers depending on if the Node environment is in development or production

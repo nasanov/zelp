@@ -9,6 +9,7 @@ import * as businessesActions from './store/businesses';
 import Navigation from './components/Navigation';
 import Businesses from './components/Businesses';
 import BusinessDetails from './components/BusinessDetails';
+import SearchResult from './components/SearchResult';
 // import Header from './components/HomePage/Header';
 
 function App() {
@@ -26,6 +27,9 @@ function App() {
 		dispatch(businessesActions.getBusinesses());
 	}, [dispatch]);
 
+	// useEffect(() => {
+	// 	dispatch(businessesActions.getSearchResults());
+	// }, [dispatch]);
 
 	return (
 		<>
@@ -48,9 +52,12 @@ function App() {
 						<Route path="/signup" exact>
 							<SignupFormPage />
 						</Route>
-						{/* <Route>
-							<NotFound />
-						</Route> */}
+						<Route path="/search">
+							<SearchResult />
+						</Route>
+						<Route>
+							<h1>Page not Found</h1>
+						</Route>
 					</Switch>
 				</>
 			)}

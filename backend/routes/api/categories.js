@@ -1,6 +1,8 @@
 const express = require('express');
 const router = express.Router();
 const asyncHandler = require('express-async-handler');
+const { BusinessCategory } = require('../../db/models');
+const { Category } = require('../../db/models');
 const { Business } = require('../../db/models');
 const Sequelize = require('sequelize')
 
@@ -9,28 +11,9 @@ router.get(
 	'/',
 	asyncHandler(async (req, res) => {
 		// get all businesses
-		if (req.query.name) {
-			let searchQuery = {
-				limit: 20,
-				order: [['id', 'DESC']],
-			};
-
-			if (req.query.name) {
-				searchQuery.where = { name: { [Sequelize.Op.iLike]: `%${req.query.name}%` } };
-			}
-			try {
-				businesses = await Business.findAll(searchQuery);
-				console.log(businesses)
-				res.json(businesses);
-				// console.log(businesses);
-			} catch (e) {
-				console.error(e);
-			}
-		} else {
-			let result = await Business.findAll();
-			console.log(result)
-			res.json(result);
-		}
+		let result = await Category.findAll();
+		console.log(result)
+		res.json(result);
 	})
 );
 
