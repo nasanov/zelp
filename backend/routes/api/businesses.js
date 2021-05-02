@@ -2,7 +2,9 @@ const express = require('express');
 const router = express.Router();
 const asyncHandler = require('express-async-handler');
 const { Business } = require('../../db/models');
-const Sequelize = require('sequelize')
+const { Review } = require('../../db/models');
+const { Category } = require('../../db/models');
+const Sequelize = require('sequelize');
 
 // get all businesses
 router.get(
@@ -26,7 +28,9 @@ router.get(
 				console.error(e);
 			}
 		} else {
-			let result = await Business.findAll();
+			let result = await Business.findAll({
+				include: [Review, Category],
+			});
 			res.json(result);
 		}
 	})

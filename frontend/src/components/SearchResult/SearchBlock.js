@@ -1,16 +1,16 @@
 import { NavLink } from 'react-router-dom';
+import './SearchBlock.css';
 import rating_1 from '../../images/small_1@2x.png';
 import rating_2 from '../../images/small_2@2x.png';
 import rating_3 from '../../images/small_3@2x.png';
 import rating_4 from '../../images/small_4@2x.png';
 import rating_5 from '../../images/small_5@2x.png';
-import './CategoryBlock.css';
 
-export default function CategoryBlock({ business, index }) {
+export default function SearchBlock({ business, index }) {
 	const rating = [rating_1, rating_2, rating_3, rating_4, rating_5];
 	return (
 		<div className="container">
-			<div className="category-title">
+			<div className="search-title">
 				<NavLink to={`/businesses/${business.id}`}>
 					{index + 1}
 					{'.  '}

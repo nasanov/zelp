@@ -14,7 +14,7 @@ export default function Footer() {
 							<a href="https://github.com/nasanov/zelp">Zelp project repo</a>
 						</li>
 						<li className="footer-li">
-							<a href="https://www.linkedin.com/in/nursultan-asanov/">LinkedIn</a>
+							<a href="https://www.linkedin.com/in/nursultan-asanov/">Linkedin</a>
 						</li>
 					</ul>
 				</div>

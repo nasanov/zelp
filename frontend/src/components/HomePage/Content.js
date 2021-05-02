@@ -17,6 +17,7 @@ export default function Content() {
 	for (let i = 0; i < 5; i++) {
 		topBusinesses.push(arr[i]);
 	}
+	console.log(topBusinesses[0]?.Categories);
 	// console.log(topBusinesses);
 	return (
 		<>
@@ -27,19 +28,31 @@ export default function Content() {
 							<div className="card__wrapper">
 								<div className="card__photo">
 									<NavLink to={`/businesses/${el?.id}`}>
-										<img src={`${el?.image_url}`} alt={`${el?.name}`} width="298px" height="180px" className='img-link'></img>
+										<img
+											src={`${el?.image_url}`}
+											alt={`${el?.name}`}
+											width="298px"
+											height="180px"
+											className="img-link"
+										></img>
 									</NavLink>
 								</div>
 								<div className="businesses-container">
 									<NavLink to={`/businesses/${el?.id}`}>
 										<h3 className="businesses__name-link">{el?.name}</h3>
 									</NavLink>
-									<div className="businesses__rating">
+									<div className="businesses-rating">
+										<span className="review-counter">{el?.Reviews.length} reviews</span>
 										<span>
 											<img src={rating[el?.rating - 1]} alt="rating_stars"></img>
 										</span>
 									</div>
-									<span className="businesses-info__cost">{el?.price}</span>
+									<div class="business-info">
+										<span className="businesses-info-price">{el?.price}</span>
+										<span class="business-info-cat">
+											{el?.Categories[0]?.name} {' • '} {el?.Categories[1]?.name}
+										</span>
+									</div>
 								</div>
 							</div>
 						</div>

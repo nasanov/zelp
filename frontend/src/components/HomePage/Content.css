@@ -3,52 +3,90 @@
 	justify-content: center;
 }
 .businesses {
-  line-height: normal;
-  margin-bottom: 25px;
+	line-height: normal;
+	margin-bottom: 25px;
 	display: inline-block;
 	border: 1px solid #e6e6e6;
 	border-radius: 4px;
-  margin: 0 16px;
-  user-select: none;
+	margin: 0 16px;
+	user-select: none;
 	margin-bottom: 5px;
 }
 
 .card__photo img {
-  border-radius: 4px 4px 0 0;
+	border-radius: 4px 4px 0 0;
 }
 
 .businesses-container {
-  font-size: 14px;
+	font-size: 14px;
 	padding: 12px;
 }
 
 .businesses__name-link {
-  font-family: sans-serif;
+	font-family: sans-serif;
 	font-size: 16px;
 	font-weight: bold;
 	color: #0073bb;
 	text-decoration: none;
 }
 
-.businesses__rating {
-  margin-bottom: 7px;
-  padding: 11px 0 0 0;
+.businesses-rating {
+	margin-bottom: 7px;
+	padding: 11px 0 0 0;
+	display: flex;
+	flex-direction: column;
 }
 
 .see-more-businesses {
-  text-align: center;
+	text-align: center;
 	margin-top: 10px;
 }
 
 .see-more-businesses a {
-  display: inline-block;
-  font-size: 14px;
-  color: #0073bb;
-  text-decoration: none;
-  margin-bottom: 40px;
+	display: inline-block;
+	font-size: 14px;
+	color: #0073bb;
+	text-decoration: none;
+	margin-bottom: 40px;
 }
 
 .see-more-businesses a:hover {
-  text-decoration: underline;
-  cursor: pointer;
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+.businesses-info-price {
+	color: #333;
+	font-size: 16px;
+}
+
+.review-counter {
+	display: inline-block;
+	padding: 0;
+	color: #666;
+	user-select: none;
+	vertical-align: text-top;
+	align-self: center;
+	margin-bottom: 5px;
+}
+
+.business-info {
+	color: #333;
+	margin-bottom: 7px;
+}
+
+.business-info-price {
+	font-size: 14px;
+	padding-right: 10px;
+}
+
+.business-info-cat {
+	font-size: 14px;
+}
+
+.business-info-cat:before {
+	content: ' • ';
+	position: relative;
+	top: 0;
+	/* color: rgb(179, 179, 179); */
 }
