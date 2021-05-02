@@ -45,19 +45,23 @@ export default function BusinessReviews({ business_id }) {
 					// onClick={/* show form */}
 					return (
 						<div key={review?.id} className="review-block">
-							{review?.user_id === sessionUser?.id ? (
-								<div className="own-review-btns">
-									<button onClick={() => setShowForm(!showForm)} className="edit-review-btn">Edit</button>
-									{showForm ? <EditForm review={review} setShowForm={setShowForm} /> : null}
-									<button onClick={e => deleteHandler(e, review?.id)} className="delete-review-btn">Delete</button>
-								</div>
-							) : null}
 							<div className="review-username">Username: {review?.User?.username}</div>
 							<div className="review-rating">
 								<img src={rating[review?.rating - 1]} alt="rating_stars" style={{ height: '16px' }}></img>{' '}
 							</div>
 							<div className="review-text">{review?.review_text}</div>
 							<div className="review-created-date">Created: {reviewDate}</div>
+							{review?.user_id === sessionUser?.id ? (
+								<div className="own-review-btns">
+									<button onClick={() => setShowForm(!showForm)} className="edit-review-btn">
+										Edit
+									</button>
+									{showForm ? <EditForm review={review} setShowForm={setShowForm} /> : null}
+									<button onClick={e => deleteHandler(e, review?.id)} className="delete-review-btn">
+										Delete
+									</button>
+								</div>
+							) : null}
 						</div>
 					);
 				})}

@@ -15,6 +15,7 @@ function HomePage({ businesses }) {
 	const sessionUser = useSelector(state => state.session.user);
 	const [searchText, setSearchText] = useState('');
 
+
 	const logout = e => {
 		e.preventDefault();
 		dispatch(sessionActions.logout());

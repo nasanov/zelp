@@ -7,7 +7,17 @@ import rating_5 from '../../images/regular_5@2x.png';
 import './BusinessInfo.css';
 export default function BusinessInfo({ business }) {
 	const rating = [rating_1, rating_2, rating_3, rating_4, rating_5];
-
+	let ratings = [];
+	business?.Reviews.forEach(el => {
+		ratings.push(parseInt(el?.rating));
+	});
+	// console.log(ratings);
+	let sum = 0;
+	ratings.forEach(el => {
+		sum += el;
+	});
+	// console.log(sum);
+	let average_rating = Math.floor(sum / ratings.length);
 	return (
 		<>
 			<div className="business-info-header">
@@ -15,7 +25,7 @@ export default function BusinessInfo({ business }) {
 					<h1 className="business-info-title">{business?.name}</h1>
 					<div className="business-info-container">
 						<span>
-							<img src={rating[business?.rating - 1]} alt="business-info-rating"></img>
+							<img src={rating[average_rating - 1]} alt="business-info-rating"></img>
 						</span>
 						<span className="business-info-reviews">{business?.Reviews.length} reviews</span>
 					</div>
@@ -38,36 +48,27 @@ export default function BusinessInfo({ business }) {
 			</div>
 			<div className="business-info-additional_info">
 				<div className="business-information">
-				<div className="detail-entry">
-					<span>Address: </span>
-					<span>{business?.address}</span>
-				</div>
-				<div className="detail-entry">
-					<span>Rating: </span>
-					<span>
-						<img src={rating[business?.rating - 1]} alt="rating_stars"></img>
-					</span>
-				</div>
-				<div className="detail-entry">
-					<span>Hours: </span>
-					<span>{business?.hours}</span>
-				</div>
-				<div className="detail-entry">
-					<span>Phone: </span>
-					<span>
-						<a href={`tel:${business?.phone}`} className="phoneNumber">
-							{business?.phone}
-						</a>
-					</span>
-				</div>
-				<div className="detail-entry">
-					<span>Price: </span>
-					<span>{business?.price}</span>
-				</div>
-				<div className="detail-entry">
-					{business?.is_closed ? <span>Open</span> : <span>Closed</span>}
-				</div>
-
+					<div className="detail-entry">
+						<span>Address: </span>
+						<span>{business?.address}</span>
+					</div>
+					<div className="detail-entry">
+						<span>Hours: </span>
+						<span>{business?.hours}</span>
+					</div>
+					<div className="detail-entry">
+						<span>Phone: </span>
+						<span>
+							<a href={`tel:${business?.phone}`} className="phoneNumber">
+								{business?.phone}
+							</a>
+						</span>
+					</div>
+					<div className="detail-entry">
+						<span>Price: </span>
+						<span>{business?.price}</span>
+					</div>
+					<div className="detail-entry">{business?.is_closed ? <span>Open</span> : <span>Closed</span>}</div>
 				</div>
 				<div className="location">
 					<GoogleApiWrapper business={business} />

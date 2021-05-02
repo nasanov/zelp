@@ -18,6 +18,10 @@ export default function BusinessDetails() {
 		dispatch(getReviews(id));
 	}, [dispatch, id]);
 
+	useEffect(() => {
+		window.scrollTo(0, 0);
+	}, []);
+
 	return (
 		<div className="main_container">
 			<BusinessInfo business={business} />
