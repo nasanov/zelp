@@ -6,7 +6,7 @@ Zelp is a web application clone based on Yelp that allows people to connect with
 
 [Live Link!](https://zelp-app.herokuapp.com/) <br>
 [Github Page](https://github.com/nasanov/zelp/) <br>
-Check out the project [Wiki Page](https://github.com/nasanov/zelp/wiki) for specifics of the MVP Feature List, DB Schema, Routes, Components, and State.
+Check out the project [Wiki Page](https://github.com/nasanov/zelp/wiki) for specifics of the MVP Feature List, Routes, Components
 
 
 ## Overall Structure
