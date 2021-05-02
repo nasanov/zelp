@@ -1,0 +1,55 @@
+.reviews-container {
+	width: 1000px;
+	margin-bottom: 30px;
+}
+
+.review-block {
+	margin-bottom: 15px;
+}
+
+.review-username {
+	color: #0073bb;
+	margin-bottom: 5px;
+}
+.review-text {
+	color: #333;
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+.review-created-date {
+	color: rgb(167, 167, 167);
+}
+
+.edit-review-btn {
+	border-radius: 3px;
+	background-color: #d32323;
+	color: #fff;
+	font-weight: bold;
+	width: 60px;
+	height: 30px;
+	border-radius: 5px;
+	outline: 0;
+	border: none;
+	transition: all 1s;
+}
+
+.delete-review-btn {
+	border-radius: 3px;
+	background-color: #d32323;
+	color: #fff;
+	font-weight: bold;
+	width: 60px;
+	height: 30px;
+	margin-left: 5px;
+	border-radius: 5px;
+	outline: 0;
+	border: none;
+	transition: all 1s;
+}
+
+.own-review-btns {
+	width: 155px;
+	border-radius: 5px;
+	margin-bottom: 10px;
+	/* padding: 5px 0; */
+}

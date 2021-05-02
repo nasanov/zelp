@@ -1,0 +1,67 @@
+.edit-review-header {
+	margin-top: 15px;
+	margin-bottom: 10px;
+	color: #d32323;
+	font-weight: bold;
+}
+
+.edit-review-form {
+	position: relative;
+	/* margin: 90px auto; */
+	width: 400px;
+	border-radius: 5px;
+	box-shadow: 0px 0px 20px rgb(218, 218, 218);
+	padding-top: 15px;
+	padding-bottom: 10px;
+	margin-bottom: 15px;
+}
+
+.edit-review-dropdown {
+	width: 40px;
+	margin-left: 5%;
+	margin-bottom: 10px;
+	height: 25px;
+	border-radius: 5px;
+	outline: 0;
+	background-color: #fff;
+	border: 1px solid #cccccc;
+	color: #333;
+	padding: 2px;
+}
+
+.edit-review-textarea {
+	width: 90%;
+	margin-left: 5%;
+	margin-bottom: 10px;
+	border-radius: 5px;
+	outline: 0;
+	height: 200px;
+	border: 1px solid #cccccc;
+	padding: 10px 10px;
+	font-size: 14px;
+}
+
+.edit-review-form-btn {
+	border-radius: 3px;
+	background-color: #d32323;
+	color: #fff;
+	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	font-weight: bold;
+	line-height: 21px;
+	width: 90%;
+	margin-left: 5%;
+	margin-bottom: 10px;
+	height: 40px;
+	border-radius: 5px;
+	outline: 0;
+	border: none;
+	transition: all 1s;
+}
+
+.edit-review-form-btn:hover {
+	background-color: #e74b4b;
+}
+
+.edit-review-textarea:focus {
+	border: 1px solid #aa0412;
+}

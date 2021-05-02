@@ -5,28 +5,23 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getReviews } from '../../store/reviews';
 // import { getOneBusiness } from '../../store/businesses';
 import './BusinessDetail.css';
-import BusinessInfo from './BusinessInfo'
+import BusinessInfo from './BusinessInfo';
 import BusinessReviews from './BusinessReviews';
 
 export default function BusinessDetails() {
-
 	let { id } = useParams();
 	const business = useSelector(state => state.business[id]);
-	// const reviews = useSelector(state => state.reviews);
 
-	// console.log('***** REVIEWS *****', reviews);
 	const dispatch = useDispatch();
 
 	useEffect(() => {
 		dispatch(getReviews(id));
-		// dispatch(getOneBusiness(id));
 	}, [dispatch, id]);
-
 
 	return (
 		<div className="main_container">
-			<BusinessInfo business={business}/>
-			<BusinessReviews business_id={id}/>
+			<BusinessInfo business={business} />
+			<BusinessReviews business_id={id} />
 		</div>
 	);
 }

@@ -79,9 +79,6 @@ function HomePage({ businesses }) {
 							<i className="fa fa-search"></i>
 						</button>
 					</form>
-					{/* <div class="copyright-block photo">
-          	<small>Photo by <a href="">Asim F.</a></small>
-        	</div> */}
 				</section>
 			</header>
 			<div>

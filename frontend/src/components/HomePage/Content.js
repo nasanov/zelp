@@ -17,7 +17,7 @@ export default function Content() {
 	for (let i = 0; i < 5; i++) {
 		topBusinesses.push(arr[i]);
 	}
-	console.log(topBusinesses[0]?.Categories);
+	// console.log(topBusinesses[0]?.Categories);
 	// console.log(topBusinesses);
 	return (
 		<>
@@ -47,9 +47,9 @@ export default function Content() {
 											<img src={rating[el?.rating - 1]} alt="rating_stars"></img>
 										</span>
 									</div>
-									<div class="business-info">
+									<div className="business-info">
 										<span className="businesses-info-price">{el?.price}</span>
-										<span class="business-info-cat">
+										<span className="business-info-cat">
 											{el?.Categories[0]?.name} {' • '} {el?.Categories[1]?.name}
 										</span>
 									</div>
