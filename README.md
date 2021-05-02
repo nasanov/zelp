@@ -1,5 +1,5 @@
 [![Website shields.io](https://img.shields.io/website-up-down-green-red/http/shields.io.svg)](https://zelp-app.herokuapp.com/)
-[![Only 32 Kb](https://badge-size.herokuapp.com/Naereen/StrapDown.js/master/strapdown.min.js)](https://github.com/nasanov/zelp)
+
 # Zelp
 
 Zelp is a web application clone based on Yelp that allows people to connect with the local businesses as well as leave reviews for other users to decide where to go and whose service to use. Zelp was created using Javascript, React, Redux, Express, and PostgresSQL.
