@@ -1,11 +1,9 @@
 .main_container {
-	width: 60%;
-	margin: 0 auto;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	/* margin: 0 auto; */
 	/* display: flex;
 	justify-content: flex-start; */
-}
-
-.location {
-	position: absolute;
-	left: 50%;
 }

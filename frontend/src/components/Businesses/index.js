@@ -1,4 +1,6 @@
-import BusinessBlock from './BusinessBlock'
+import BusinessBlock from './BusinessBlock';
+import './Businesses.css'
+
 export default function Businesses({ businesses }) {
 	let arr = [];
 	for (let i in businesses) {
@@ -8,11 +10,9 @@ export default function Businesses({ businesses }) {
 
 	return (
 		<div className="businesses_container">
-			<h1>All businesses page</h1>
+			<h1 className="all-biz-header">All businesses page</h1>
 			{arr.map(business => {
-				return (
-						<BusinessBlock business={business} key={business.id}/>
-				);
+				return <BusinessBlock business={business} key={business.id} />;
 			})}
 		</div>
 	);

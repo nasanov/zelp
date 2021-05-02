@@ -12,9 +12,9 @@ export default function Category() {
 	let businesses = categories[id]?.Businesses;
 	return (
 		<div className="businesses_container">
-			<h1>{categories[id]?.name}</h1>
-			{businesses?.map(business => {
-				return <CategoryBlock business={business} key={business.id} />;
+			<h1 className="all-biz-header">{categories[id]?.name}</h1>
+			{businesses?.map((business, index) => {
+				return <CategoryBlock business={business} index={index} key={business.id} />;
 			})}
 		</div>
 	);

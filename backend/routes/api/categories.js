@@ -14,7 +14,7 @@ router.get(
 		let result = await Category.findAll({
 			include: [Business],
 		});
-		console.log(result);
+		// console.log(result);
 		res.json(result);
 	})
 );

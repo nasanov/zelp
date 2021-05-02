@@ -33,7 +33,7 @@ export const getBusinesses = () => async dispatch => {
 
 export const getSearchResults = term => async dispatch => {
 	const res = await csrfFetch(`/api/businesses?name=${term}`);
-	console.log('hello');
+	// console.log('hello');
 	if (!res.ok) throw res;
 	let foundBusiness = {};
 	let businesses = await res.json();

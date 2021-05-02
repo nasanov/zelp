@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { addReview } from '../../store/reviews';
-// import './ReviewForm.css'
+import './ReviewForm.css';
 
 function ReviewForm({ business_id }) {
 	// get business id
@@ -25,22 +25,27 @@ function ReviewForm({ business_id }) {
 	};
 
 	return (
-		<form onSubmit={handleSubmit}>
-			<select value={rating} onChange={e => setRating(e.target.value)}>
-				<option value="1">1</option>
-				<option value="2">2</option>
-				<option value="3">3</option>
-				<option value="4">4</option>
-				<option value="5">5</option>
-			</select>
-			<textarea
-				placeholder="Add review"
-				type="text"
-				value={review_text}
-				onChange={e => setReviewText(e.target.value)}
-			></textarea>
-			<button>Add review</button>
-		</form>
+		<>
+			<h3 className="review-header">Review Form</h3>
+			<form onSubmit={handleSubmit} className="review-form">
+				<select value={rating} onChange={e => setRating(e.target.value)} className="review-dropdown">
+					<option value="1">1</option>
+					<option value="2">2</option>
+					<option value="3">3</option>
+					<option value="4">4</option>
+					<option value="5">5</option>
+				</select>
+				<textarea
+					placeholder="Add review"
+					type="text"
+					value={review_text}
+					onChange={e => setReviewText(e.target.value)}
+					required
+					className="review-textarea"
+				></textarea>
+				<button className="add-review-btn">Add review</button>
+			</form>
+		</>
 	);
 }
 

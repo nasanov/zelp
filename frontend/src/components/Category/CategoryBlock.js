@@ -4,13 +4,18 @@ import rating_2 from '../../images/small_2@2x.png';
 import rating_3 from '../../images/small_3@2x.png';
 import rating_4 from '../../images/small_4@2x.png';
 import rating_5 from '../../images/small_5@2x.png';
+import './CategoryBlock.css';
 
-export default function CategoryBlock({ business }) {
+export default function CategoryBlock({ business, index }) {
 	const rating = [rating_1, rating_2, rating_3, rating_4, rating_5];
 	return (
 		<div className="container">
-			<div className="title">
-				<NavLink to={`/businesses/${business.id}`}>{business.name}</NavLink>
+			<div className="category-title">
+				<NavLink to={`/businesses/${business.id}`}>
+					{index + 1}
+					{'.  '}
+					{business.name}
+				</NavLink>
 			</div>
 			<div>
 				<NavLink to={`/businesses/${business.id}`}>
@@ -18,19 +23,32 @@ export default function CategoryBlock({ business }) {
 				</NavLink>
 			</div>
 			<div className="additional_info">
-				<p>Address: {business.address}</p>
-				{/* <p>Rating: {business.rating}</p> */}
-				<p>
-					Rating: <img src={rating[business.rating - 1]} alt="rating_stars"></img>
-				</p>
-				<p>Hours: {business.hours}</p>
-				<p>
-					Phone:{' '}
-					<a href={`tel:${business.phone}`} className="phoneNumber">
-						{business.phone}
-					</a>
-				</p>
-				<p>Price: {business.price}</p>
+				<div className="detail-entry">
+					<span>Address: </span>
+					<span>{business.address}</span>
+				</div>
+				<div className="detail-entry">
+					<span>Rating: </span>
+					<span>
+						<img src={rating[business.rating - 1]} alt="rating_stars"></img>
+					</span>
+				</div>
+				<div className="detail-entry">
+					<span>Hours: </span>
+					<span>{business.hours}</span>
+				</div>
+				<div className="detail-entry">
+					<span>Phone: </span>
+					<span>
+						<a href={`tel:${business.phone}`} className="phoneNumber">
+							{business.phone}
+						</a>
+					</span>
+				</div>
+				<div className="detail-entry">
+					<span>Price: </span>
+					<span>{business.price}</span>
+				</div>
 			</div>
 		</div>
 	);

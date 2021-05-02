@@ -1,0 +1,48 @@
+.container {
+	width: 50%;
+	background: #fefcfb;
+	border-radius: 5px;
+	border: 1px solid #ccc;
+	margin: 30px auto;
+	padding: 10px 20px;
+	display: grid;
+	grid-template-areas:
+		'title title'
+		'poster details';
+	grid-template-rows: 27px 1fr;
+	grid-template-columns: 190px 400px;
+	row-gap: 5px;
+}
+
+.category-title {
+	grid-area: title;
+	font-size: 22px;
+	font-family: sans-serif;
+	font-weight: bold;
+	color: #0073bb;
+	text-decoration: none;
+	/* border-bottom: 1px solid rgb(240, 240, 240); */
+}
+
+.detail-entry {
+	display: grid;
+	grid-template-columns: 90px 1fr;
+	grid-template-rows: 1fr;
+	margin-bottom: 10px;
+}
+
+.bus_img {
+	grid-area: poster;
+	display: flex;
+	flex-direction: column;
+	width: 160px;
+}
+
+.phoneNumber {
+	color: rgb(0, 140, 255);
+}
+
+.phoneNumber:hover {
+	color: rgb(0, 140, 255);
+	text-decoration: underline;
+}

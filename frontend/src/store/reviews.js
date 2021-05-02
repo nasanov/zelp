@@ -42,7 +42,7 @@ export const addReview = reviewObj => async dispatch => {
 
 	if (res.ok) {
 		const review = await res.json();
-		console.log(review);
+		// console.log(review);
 		dispatch(addOneReview(review));
 		return review;
 	} else {
@@ -59,7 +59,7 @@ export const editReview = reviewObj => async dispatch => {
 
 	if (res.ok) {
 		const review = await res.json();
-		console.log(review);
+		// console.log(review);
 		dispatch(editOneReview(review));
 		return review;
 	} else {
@@ -72,7 +72,6 @@ export const deleteReview = id => async dispatch => {
 		method: "DELETE",
 		body: JSON.stringify({ id }),
 	});
-	console.log(res)
 	if (res.ok) {
 		dispatch(removeReview(id));
 	} else {

@@ -2,3 +2,14 @@
 	display: grid;
 	grid-column: 1fr;
 }
+
+.all-biz-header {
+	text-align: center;
+	font-weight: 600;
+	font-size: 1.5em;
+	margin-top: 10px;
+	color: #cc0606;
+	margin-bottom: 10px;
+	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	margin: 0 auto;
+}

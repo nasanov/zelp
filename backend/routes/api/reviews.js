@@ -7,7 +7,7 @@ router.get(
 	'/',
 	asyncHandler(async function (req, res) {
 		const reviews = await Review.findAll();
-		console.log('Backend reviews route /api/reviews/');
+		// console.log('Backend reviews route /api/reviews/');
 		// console.log(reviews);
 		return res.json(reviews);
 	})
@@ -44,7 +44,7 @@ router.post(
 			});
 			res.json(newReview);
 		} catch (e) {
-			console.log(e);
+			console.error(e);
 		}
 	})
 );
