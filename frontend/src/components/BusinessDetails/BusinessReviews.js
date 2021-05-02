@@ -15,7 +15,7 @@ export default function BusinessReviews({ business_id }) {
 	const [showForm, setShowForm] = useState(false);
 
 	const deleteHandler = (e, id) => {
-		console.log(id);
+		// console.log(id);
 		e.preventDefault();
 		dispatch(deleteReview(id));
 	};

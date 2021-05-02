@@ -133,7 +133,7 @@ API_KEY =
 	'9G0GMPxGe0300Qdg9GuM_j1ZWRhrf-5rFT46OAu5Plnx-WuHgWLS9AMDTWJ-WNG1Wgwrqpk3253y6Mdn8P9WUYYpO55Om-pLtbbNNLTZXxxEFvT_Uc2P5L-9y0aDYHYx';
 
 const fetch = require('node-fetch');
-let fs = require("fs");
+let fs = require('fs');
 
 // function houstonData() {
 // 	let businesses = [];
@@ -164,11 +164,10 @@ function myLoop() {
 				Authorization: `Bearer ${API_KEY}`,
 			},
 		})
-		.then(res => res.json())
-		.then(res => {
-			businesses.push(res);
-		})
-		.then(() => console.log('----', businesses))
+			.then(res => res.json())
+			.then(res => {
+				businesses.push(res);
+			});
 
 		i++;
 		if (i < 3) {
@@ -179,7 +178,6 @@ function myLoop() {
 
 myLoop();
 
-
 async function getData() {
 	const res = await fetch('https://api.yelp.com/v3/businesses/search?location=Houston&categories=active', {
 		method: 'GET',
@@ -188,17 +186,13 @@ async function getData() {
 			'Content-type': 'application/json',
 		},
 	})
-	.then(res => res.json())
-	// .then(res => console.log(res))
-	.then(res => res)
+		.then(res => res.json())
+		// .then(res => console.log(res))
+		.then(res => res);
 }
 
 let res = getData();
 console.log(res);
-
-
-
-
 
 async function getData(id) {
 	try {
@@ -206,7 +200,7 @@ async function getData(id) {
 			headers: {
 				Authorization: `Bearer ${API_KEY}`,
 			},
-		})
+		});
 		const details = await res.json();
 		return details;
 	} catch (e) {
@@ -218,8 +212,8 @@ async function getDetails() {
 	let businesses = [];
 
 	for (let i = 0; i < houston_id.length; i++) {
-		const response = await getData(houston_id[i])
-		businesses.push(response)
+		const response = await getData(houston_id[i]);
+		businesses.push(response);
 	}
 
 	businesses = JSON.stringify(businesses);

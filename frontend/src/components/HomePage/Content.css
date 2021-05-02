@@ -1,0 +1,54 @@
+.content {
+	display: flex;
+	justify-content: center;
+}
+.businesses {
+  line-height: normal;
+  margin-bottom: 25px;
+	display: inline-block;
+	border: 1px solid #e6e6e6;
+	border-radius: 4px;
+  margin: 0 16px;
+  user-select: none;
+	margin-bottom: 5px;
+}
+
+.card__photo img {
+  border-radius: 4px 4px 0 0;
+}
+
+.businesses-container {
+  font-size: 14px;
+	padding: 12px;
+}
+
+.businesses__name-link {
+  font-family: sans-serif;
+	font-size: 16px;
+	font-weight: bold;
+	color: #0073bb;
+	text-decoration: none;
+}
+
+.businesses__rating {
+  margin-bottom: 7px;
+  padding: 11px 0 0 0;
+}
+
+.see-more-businesses {
+  text-align: center;
+	margin-top: 10px;
+}
+
+.see-more-businesses a {
+  display: inline-block;
+  font-size: 14px;
+  color: #0073bb;
+  text-decoration: none;
+  margin-bottom: 40px;
+}
+
+.see-more-businesses a:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}

@@ -20,7 +20,6 @@ router.get(
 			}
 			try {
 				businesses = await Business.findAll(searchQuery);
-				console.log(businesses)
 				res.json(businesses);
 				// console.log(businesses);
 			} catch (e) {

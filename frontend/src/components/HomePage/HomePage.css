@@ -1,9 +1,9 @@
 .header {
 	height: 600px;
-	background-image: url('./baloons.jpg');
+	background-image: url('./123.jpg');
 	background-repeat: no-repeat;
 	background-size: cover;
-	background-position: center;
+	background-position: center center;
 }
 
 .home-nav {
@@ -12,6 +12,7 @@
 	display: flex;
 	align-items: center;
 	justify-content: flex-end;
+	height: 55px;
 }
 
 .home-nav ul {
@@ -26,17 +27,27 @@
 	background-color: rgba(0, 0, 0, 0);
 }
 
+.home-nav ul li:hover {
+	border-bottom: 2px solid #fff;
+}
+
+.home-nav ul li:last-child {
+	border-bottom: none;
+}
+
 .home-nav a {
 	display: block;
 	padding: 9px 15px;
 	color: #fefcfb;
-	font-size: 17px;
+	font-size: 15px;
 	text-decoration: none;
+	font-weight: bold;
 }
 
 .home-signup-btn {
 	border: 1px solid #fff;
 	border-radius: 5px;
+	transition: all 0.5s;
 }
 
 .home-signup-btn:hover {
@@ -62,7 +73,7 @@
 }
 
 .search {
-	width: 60%;
+	width: 50%;
 	position: relative;
 	display: flex;
 	/* height: 80%; */
@@ -74,18 +85,25 @@
 
 .searchTerm {
 	width: 100%;
-	border: 3px solid #cc0011;
 	border-right: none;
-	padding: 5px;
 	height: 20px;
 	border-radius: 5px 0 0 5px;
 	outline: none;
 	color: #cf6b80;
+	font-size: 18px;
+	height: 40px;
+	border: 1px solid #cccccc;
+	padding: 0 0 0 15px;
+	font-size: 14px;
 }
 
 .searchTerm:focus {
-	color: #d85a65;
+	color: #5e5e5e;
 	outline: none;
+}
+
+.searchTerm:focus {
+	border: 1px solid #aa0412;
 }
 
 .searchButton {
@@ -113,4 +131,69 @@
 .page-logo {
 	width: 350px;
 	display: block;
+}
+
+.content-heading {
+	font-size: 21px;
+	font-weight: bold;
+	color: #d32323;
+	text-align: center;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+.category-businesses {
+	background: #f5f5f5;
+	margin-bottom: 59px;
+	padding: 20px;
+}
+
+.category-wrapper {
+	width: 960px;
+	margin: 0 auto;
+	padding: 16px 0 7px 0;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+	grid-template-rows: 1fr 1fr;
+}
+
+.category-heading-wrapper h2 {
+	font-size: 21px;
+	line-height: 1.1em;
+	color: #d32323;
+	text-align: center;
+	font-weight: bold;
+}
+
+.category-block {
+	margin: 8px;
+}
+
+.category-businesses__col {
+	display: inline-block;
+	box-sizing: border-box;
+	width: 217.5px;
+	margin-left: 15px;
+	margin-right: 15px;
+	padding: 17px 0 34px 0;
+	border: 1px solid #e6e6e6;
+	border-radius: 4px;
+	text-align: center;
+	vertical-align: top;
+	text-decoration: none;
+	color: #333;
+	background: #fff;
+	font-size: 11px;
+}
+
+.category-businesses__col:hover {
+	border-color: #b12638;
+}
+
+.category-businesses__col .category-businesses__label {
+	display: block;
+	font-size: 14px;
+	padding-top: 14px;
+	text-align: center;
+	font-weight: bold;
 }

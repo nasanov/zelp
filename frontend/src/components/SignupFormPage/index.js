@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Redirect } from 'react-router-dom';
+import { Redirect, NavLink } from 'react-router-dom';
 import * as sessionActions from '../../store/session';
 import './SignupForm.css';
+import logo from '../../images/logo.png';
 
 function SignupFormPage() {
 	const dispatch = useDispatch();
@@ -28,34 +29,88 @@ function SignupFormPage() {
 	};
 
 	return (
-		<div className="loginWrap">
-			<form onSubmit={handleSubmit}>
-				<h1>Signup</h1>
-				{errors.length ? (
-					<div className="errorsContainer">
-						<span>The following errors occurred:</span>
-						<ul className="errorsList">
-							{errors.map((error, idx) => (
-								<li key={idx}>{error}</li>
-							))}
-						</ul>
+		<>
+			<nav className="signupFormNav">
+				<NavLink to="/">
+					<img src={logo} className="nav-logo" alt="nav-logo" height="70" />
+				</NavLink>
+			</nav>
+			<div className="signup-container">
+				<div className="signupWrap">
+					<div className="switch-link-container">
+						<h1 className="login-form-header">Sign Up for Zelp</h1>
+						<span className="switchLinkName">Already on Zelp?</span>
+						<NavLink to="/login" className="switchLink">
+							Login
+						</NavLink>
 					</div>
-				) : <div></div>}
-				<label>
-					<input type="text" value={email} onChange={e => setEmail(e.target.value)} required placeholder="Email"/>
-				</label>
-				<label>
-					<input type="text" value={username} onChange={e => setUsername(e.target.value)} required placeholder="Username"/>
-				</label>
-				<label>
-					<input type="password" value={password} onChange={e => setPassword(e.target.value)} required placeholder="Password"/>
-				</label>
-				<label>
-					<input type="password" value={confirmPassword} onChange={e => setConfirmPassword(e.target.value)} required placeholder="Confirm Password"/>
-				</label>
-				<button type="submit" className="buttonPrimary">Sign Up</button>
-			</form>
-		</div>
+					<form onSubmit={handleSubmit}>
+						{errors.length ? (
+							<div className="errorsContainer">
+								<span>The following errors occurred:</span>
+								<ul className="errorsList">
+									{errors.map((error, idx) => (
+										<li key={idx}>{error}</li>
+									))}
+								</ul>
+							</div>
+						) : (
+							<div></div>
+						)}
+						<label>
+							<input
+								type="text"
+								value={email}
+								onChange={e => setEmail(e.target.value)}
+								required
+								placeholder="E-mail"
+								className="login-input"
+							/>
+						</label>
+						<label>
+							<input
+								type="text"
+								value={username}
+								onChange={e => setUsername(e.target.value)}
+								required
+								placeholder="Username"
+								className="signup-input"
+							/>
+						</label>
+						<label>
+							<input
+								type="password"
+								value={password}
+								onChange={e => setPassword(e.target.value)}
+								required
+								placeholder="Password"
+								className="signup-input"
+							/>
+						</label>
+						<label>
+							<input
+								type="password"
+								value={confirmPassword}
+								onChange={e => setConfirmPassword(e.target.value)}
+								required
+								placeholder="Confirm Password"
+								className="signup-input"
+							/>
+						</label>
+						<button type="submit" className="signup-btn">
+							Sign Up
+						</button>
+					</form>
+				</div>
+				<div className="loginBanner">
+					<img
+						src="https://s3-media0.fl.yelpcdn.com/assets/2/www/img/7922e77f338d/signup/signup_illustration.png"
+						alt="login-banner"
+						className="banner-img"
+					/>
+				</div>
+			</div>
+		</>
 	);
 }
 

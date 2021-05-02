@@ -22,7 +22,7 @@ export default function SearchResult() {
 			{arr.map(business => {
 				return (
 					<div className="container">
-						<div className="title">
+						<div className="search-title">
 							<NavLink to={`/businesses/${business.id}`}>{business.name}</NavLink>
 						</div>
 						<div>

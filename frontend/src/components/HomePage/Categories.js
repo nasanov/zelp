@@ -14,7 +14,7 @@ export default function Categories() {
 	}
 
 	let topCat = arr.filter(el => el.Businesses.length >= 4);
-	console.log(topCat);
+	// console.log(topCat);
 
 	const dispatch = useDispatch();
 	useEffect(() => {
@@ -23,17 +23,24 @@ export default function Categories() {
 
 	return (
 		<>
-			<h1>Top Categories</h1>
-			{topCat.map(cat => {
-				return (
-					<>
-						<NavLink to={`/categories/${cat.id}`}>
-							<h1 key={cat.id}>{cat.name}</h1>
-						</NavLink>
-						;
-					</>
-				);
-			})}
+			<section className="category-businesses">
+				<div className="category-heading-wrapper">
+					<h2>Top Categories</h2>
+				</div>
+				<div className="category-wrapper">
+					{topCat.map((cat, index) => {
+						return (
+							<div key={index} className="category-block">
+								<NavLink to={`/categories/${cat.id}`} className="category-businesses__col">
+									<h1 key={cat.id} className="category-businesses__label">
+										{cat.name}
+									</h1>
+								</NavLink>
+							</div>
+						);
+					})}
+				</div>
+			</section>
 		</>
 	);
 }

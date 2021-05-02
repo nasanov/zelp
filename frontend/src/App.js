@@ -39,7 +39,7 @@ function App() {
 
 	return (
 		<>
-			{location.pathname !== '/' && <Navigation isLoaded={isLoaded} />}
+			{(location.pathname !== '/' && location.pathname !== '/login' && location.pathname !== '/signup') && <Navigation isLoaded={isLoaded} />}
 			{isLoaded && (
 				<>
 					<Switch>

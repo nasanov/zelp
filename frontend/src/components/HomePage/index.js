@@ -3,7 +3,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { NavLink, useHistory } from 'react-router-dom'; // Redirect,
 import * as sessionActions from '../../store/session';
 import logo from '../../images/logo.png';
-import Categories from  './Categories'
+import Categories from './Categories';
+import Content from './Content';
 import { useState } from 'react';
 import { getSearchResults } from '../../store/businesses';
 import './HomePage.css';
@@ -78,14 +79,16 @@ function HomePage({ businesses }) {
 							<i className="fa fa-search"></i>
 						</button>
 					</form>
+					{/* <div class="copyright-block photo">
+          	<small>Photo by <a href="">Asim F.</a></small>
+        	</div> */}
 				</section>
 			</header>
 			<div>
-				<h1>Zelp in Houston</h1>
-				{/* <Content /> */}
+				<h1 className="content-heading">Zelp Houston</h1>
+				<Content />
 				<Categories />
 			</div>
-			{/* <Footer /> */}
 		</>
 	);
 }

@@ -6,6 +6,7 @@ import rating_2 from '../../images/small_2@2x.png';
 import rating_3 from '../../images/small_3@2x.png';
 import rating_4 from '../../images/small_4@2x.png';
 import rating_5 from '../../images/small_5@2x.png';
+import './Content.css';
 
 export default function Content() {
 	const rating = [rating_1, rating_2, rating_3, rating_4, rating_5];
@@ -16,24 +17,38 @@ export default function Content() {
 	for (let i = 0; i < 5; i++) {
 		topBusinesses.push(arr[i]);
 	}
-	console.log(topBusinesses);
+	// console.log(topBusinesses);
 	return (
-		<div>
-			{topBusinesses.map(el => {
-				return (
-					<div key={el?.id}>
-						<NavLink to={`/businesses/${el?.id}`}>
-							<h3>{el?.name}</h3>
-						</NavLink>
-						<p>
-							<img src={rating[el?.rating - 1]} alt="rating_stars"></img>
-						</p>
-						<NavLink to={`/businesses/${el?.id}`}>
-							<img src={`${el?.image_url}`} alt={`${el?.name}`}></img>
-						</NavLink>
-					</div>
-				);
-			})}
-		</div>
+		<>
+			<div className="content">
+				{topBusinesses.map((el, index) => {
+					return (
+						<div key={index} className="businesses">
+							<div className="card__wrapper">
+								<div className="card__photo">
+									<NavLink to={`/businesses/${el?.id}`}>
+										<img src={`${el?.image_url}`} alt={`${el?.name}`} width="298px" height="180px" className='img-link'></img>
+									</NavLink>
+								</div>
+								<div className="businesses-container">
+									<NavLink to={`/businesses/${el?.id}`}>
+										<h3 className="businesses__name-link">{el?.name}</h3>
+									</NavLink>
+									<div className="businesses__rating">
+										<span>
+											<img src={rating[el?.rating - 1]} alt="rating_stars"></img>
+										</span>
+									</div>
+									<span className="businesses-info__cost">{el?.price}</span>
+								</div>
+							</div>
+						</div>
+					);
+				})}
+			</div>
+			<div className="see-more-businesses">
+				<NavLink to="/businesses">See more businesses</NavLink>
+			</div>
+		</>
 	);
 }

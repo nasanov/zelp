@@ -8,10 +8,15 @@ import rating_5 from '../../images/small_5@2x.png';
 
 export default function BusinessBlock({ business }) {
 	const rating = [rating_1, rating_2, rating_3, rating_4, rating_5];
+	// console.log(business)
 	return (
 		<div className="container">
-			<div className="title">
-				<NavLink to={`/businesses/${business.id}`}>{business.name}</NavLink>
+			<div className="business-title">
+				<NavLink to={`/businesses/${business.id}`}>
+					{business.id}
+					{'.  '}
+					{business.name}
+				</NavLink>
 			</div>
 			<div>
 				<NavLink to={`/businesses/${business.id}`}>
@@ -19,19 +24,32 @@ export default function BusinessBlock({ business }) {
 				</NavLink>
 			</div>
 			<div className="additional_info">
-				<p>Address: {business.address}</p>
-				{/* <p>Rating: {business.rating}</p> */}
-				<p>
-					Rating: <img src={rating[business.rating - 1]} alt="rating_stars"></img>
-				</p>
-				<p>Hours: {business.hours}</p>
-				<p>
-					Phone:{' '}
-					<a href={`tel:${business.phone}`} className="phoneNumber">
-						{business.phone}
-					</a>
-				</p>
-				<p>Price: {business.price}</p>
+				<div className="detail-entry">
+					<span>Address: </span>
+					<span>{business.address}</span>
+				</div>
+				<div className="detail-entry">
+					<span>Rating: </span>
+					<span>
+						<img src={rating[business.rating - 1]} alt="rating_stars"></img>
+					</span>
+				</div>
+				<div className="detail-entry">
+					<span>Hours: </span>
+					<span>{business.hours}</span>
+				</div>
+				<div className="detail-entry">
+					<span>Phone: </span>
+					<span>
+						<a href={`tel:${business.phone}`} className="phoneNumber">
+							{business.phone}
+						</a>
+					</span>
+				</div>
+				<div className="detail-entry">
+					<span>Price: </span>
+					<span>{business.price}</span>
+				</div>
 			</div>
 		</div>
 	);

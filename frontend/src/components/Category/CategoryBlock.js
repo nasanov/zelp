@@ -9,7 +9,7 @@ export default function CategoryBlock({ business }) {
 	const rating = [rating_1, rating_2, rating_3, rating_4, rating_5];
 	return (
 		<div className="container">
-			<div className="title">
+			<div className="categorytitle">
 				<NavLink to={`/businesses/${business.id}`}>{business.name}</NavLink>
 			</div>
 			<div>
