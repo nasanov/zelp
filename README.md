@@ -12,10 +12,7 @@ Feel free to visit the project wiki for specifics of the MVP Feature List, DB Sc
 ![db_schema](https://github.com/nasanov/authenticate-me/blob/main/planning/db/db_image-v2.png)
 
 ### Backend
-The application was built using Javascript with a PostgreSQL database.
-
-### Frontend
-The front end is built using React/Redux and CSS.
+The application was built using Javascript with a PostgreSQL database. back end was created using Express. It primarily functions as a REST API to provide JSON objects to React.
 
 ### Libraries
 - Zelp uses:
@@ -24,7 +21,20 @@ The front end is built using React/Redux and CSS.
 - express-validator
 - sequelize
 - bcrypt
+- JSONWebToken
 - ...
+
+### Frontend
+The front end is built using React/Redux and CSS.
+
+
+### Libraries:
+- React
+- Redux
+- google-maps-react
+
+
+
 
 
 
