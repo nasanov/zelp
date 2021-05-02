@@ -15,28 +15,26 @@ Check out the project [Wiki Page](https://github.com/nasanov/zelp/wiki) for spec
 ### Backend
 The application was built using Javascript with a PostgreSQL database. back end was created using Express. It primarily functions as a REST API to provide JSON objects to React.
 
-### Libraries
-- Zelp uses:
+### Frontend
+The front end is built using React/Redux and CSS.
+
+### Technologies used
+Backend:
 - express
-- express-session
 - express-validator
 - sequelize
 - bcrypt
 - JSONWebToken
-- ...
+- PostgreSQL
+- csurf
+- cors
+- cookie-parser
 
-### Frontend
-The front end is built using React/Redux and CSS.
-
-
-### Libraries:
-- React
-- Redux
-- google-maps-react
-
-
-
-
+Frontend:
+- JavaScript
+- HTML, CSS
+- React, Redux
+- Google Maps API
 
 
 ## Primary Components
@@ -55,3 +53,8 @@ home-page
 Businesses
 The movies page, allows users to browse through a wide selection of over 900 movies, arranged by sets of 50. The search feature allows users to look up certain movies based on keywords and lists them all out.
 ![details](https://github.com/nasanov/zelp/blob/main/planning/details.png)
+
+### Stretch Goals
+Users profiles.
+User can register as a business owner and create business page.
+Responsive design.
