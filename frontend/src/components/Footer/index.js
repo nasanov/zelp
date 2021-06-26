@@ -5,13 +5,14 @@ export default function Footer() {
 		<footer className="main-footer">
 			<section className="footer-wrapper">
 				<div className="about">
-					<span className="footer-heading">About</span>
+					<span className="footer-heading">About Developer</span>
+					<span className="footer-name">Name: Nurs Asanov</span>
 					<ul className="footer-list">
 						<li className="footer-li">
 							<a href="https://github.com/nasanov">GitHub</a>
 						</li>
 						<li className="footer-li">
-							<a href="https://github.com/nasanov/zelp">Zelp project repo</a>
+							<a href="https://github.com/nasanov/zelp">Project GitHub</a>
 						</li>
 						<li className="footer-li">
 							<a href="https://www.linkedin.com/in/nursultan-asanov/">Linkedin</a>
