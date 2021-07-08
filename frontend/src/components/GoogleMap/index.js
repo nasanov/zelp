@@ -26,6 +26,5 @@ export function MapContainer(props) {
 	);
 }
 export default GoogleApiWrapper({
-	apiKey: JSON.stringify(process.env.GOOGLE_MAPS_KEY),
-	// apiKey: 'AIzaSyBFNqoLUebIOmqlXXytHbYh2YF4AGMeYGQ',
+	apiKey: process.env.GOOGLE_MAPS_KEY,
 })(MapContainer);
