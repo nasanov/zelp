@@ -5,7 +5,7 @@ import { Map, GoogleApiWrapper, Marker } from 'google-maps-react';
 
 export function MapContainer(props) {
 	let { business } = props;
-	// console.log('dfgsdfg', locationIcon);
+
 	return (
 		<Map
 			google={props.google}
@@ -26,5 +26,5 @@ export function MapContainer(props) {
 	);
 }
 export default GoogleApiWrapper({
-	apiKey: process.env.GOOGLE_MAPS_KEY,
+	apiKey: process.env.REACT_APP_GOOGLE_MAPS_KEY,
 })(MapContainer);
